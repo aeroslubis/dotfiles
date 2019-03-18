@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# comment the next line to convert newlines to spaces
+cat ~/.nnncp | xargs -0 | xclip -i -selection clipboard
+
+# echo -n $1 | xclip -i -selection clipboard

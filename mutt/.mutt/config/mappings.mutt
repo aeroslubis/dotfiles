@@ -1,0 +1,21 @@
+# Navigation
+bind pager k previous-line
+bind pager j next-line
+bind pager gg top
+bind pager G bottom
+
+# Mouse wheel
+bind index \031 previous-undeleted
+bind index \005 next-undeleted
+bind pager \031 previous-line
+bind pager \005 next-line
+
+# Sidebar
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cj sidebar-next
+bind index,pager \Cl sidebar-open
+
+macro index,pager S <sync-mailbox>
+
+# View attachments properly.
+bind attach <return> view-mailcap

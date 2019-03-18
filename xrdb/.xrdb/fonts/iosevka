@@ -1,0 +1,7 @@
+! fonts
+URxvt*font:         xft:Iosevka Term:size=11, xft:FontAwesome:size=11
+URxvt*boldFont:     xft:Iosevka Term:bold:size=11, xft:FontAwesome:size=11
+URxvt*italicFont:   xft:Iosevka Term:italic:size=11, xft:FontAwesome:size=11
+
+st.font:            Iosevka Term:size=11:antialias=true:autohint=true;
+rofi.font:          Iosevka Term 15

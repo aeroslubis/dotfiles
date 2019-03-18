@@ -1,0 +1,47 @@
+text/plain; less %s ;
+#text/html; ~/.mutt/bin/openfile.sh %s ;
+text/html; surf 'file://%s'; nametemplate=%s.html;
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+image/*; ~/.mutt/bin/muttimage.sh %s; copiousoutput;
+video/*; setsid mpv --quiet %s &;
+application/pdf; ~/.mutt/bin/openfile.sh %s;
+
+# Microsoft office file docx,xlsx
+application/msword; antiword -w 200 %s | less;
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; scim %s;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; docx2txt < '%s' | less; needsterminal
+
+# Open Document file
+application/vnd.oasis.opendocument.text; odt2txt --width=200 '%s'; needsterminal
+application/vnd.oasis.opendocument.text-master; odt2txt --width=200 '%s'; needsterminal
+application/vnd.oasis.opendocument.text-template; odt2txt --width=200 '%s'; needsterminal
+application/vnd.oasis.opendocument.text-web; odt2txt --width=200 '%s'; needsterminal
+application/vnd.oasis.opendocument.presentation; odt2txt --width=200 '%s'; needsterminal
+application/vnd.oasis.opendocument.presentation-template; odt2txt --width=200 '%s'; needsterminal
+
+application/vnd.sun.xml.writer; odt2txt --width=200 '%s' | less; needsterminal
+application/vnd.sun.xml.writer.template; odt2txt --width=200 '%s'; needsterminal
+application/vnd.sun.xml.writer.global; odt2txt --width=200 '%s'; needsterminal
+application/vnd.sun.xml.calc; odt2txt --width=200 '%s'; needsterminal
+application/vnd.sun.xml.calc.template; odt2txt --width=200 '%s'; needsterminal
+application/vnd.sun.xml.impress; odt2txt --width=200 '%s'; needsterminal
+application/vnd.sun.xml.impress.template; odt2txt --width=200 '%s'; needsterminal
+
+text/csv; less '%s'; needsterminal
+text/tab-separated-values; less '%s'; needsterminal
+
+application/x-bzip; tar --list '%s'; needsterminal
+application/x-bzip1; tar --list '%s'; needsterminal
+application/x-bzip-compressed-tar; tar --list '%s'; needsterminal
+application/x-bzip1-compressed-tar; tar --list '%s'; needsterminal
+application/x-tar; tar --list '%s'; needsterminal
+application/x-tarz; tar --list '%s'; needsterminal
+application/x-lzma; xz -l '%s'; needsterminal
+application/x-lzma-compressed-tar; xz -l '%s'; needsterminal
+application/x-xz; xz -l '%s'; needsterminal
+application/x-xz-compressed-tar; xz -l '%s'; needsterminal
+application/x-7z-compressed; 7z l '%s'; needsterminal
+application/x-7z-compressed-tar; tar --list '%s'; needsterminal
+application/x-zip; unzip -l '%s'; needsterminal
+application/x-zip-compressed; unzip -l '%s'; needsterminal
+application/zip; unzip -l '%s'; needsterminal

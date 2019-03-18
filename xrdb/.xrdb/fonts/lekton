@@ -1,0 +1,5 @@
+! fonts
+URxvt*font: xft:Lekton Nerd Font:size=12, xft:FontAwesome:size=12
+! URxvt*.boldFont: xft:SF Mono:bold:size=11, xft:FontAwesome:size=11
+
+rofi.font: SFMono Nerd Font 15

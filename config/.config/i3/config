@@ -1,0 +1,251 @@
+#  ________  ______
+# /_______/\/_____/\
+# \__.::._\/\:::_:\ \
+#    \::\ \    /_\:\ \
+#    _\::\ \__ \::_:\ \
+#   /__\::\__/\/___\:\ '
+#   \________\/\______/
+#
+set $mod Mod4
+set $locker ~/.bin/betterlockscreen
+set $script ~/Codes/Bash
+
+font pango:Roboto, FontAwesome 10
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# ---------------------run programs on startup-------------------
+# Set wallpaper screen
+exec_always --no-startup-id $locker -w
+# Launch to bar
+exec --no-startup-id polybar default
+# Lauch window manager compositor
+exec_always --no-startup-id compton
+# auto lock computer if no activity detecter after 10 minutes
+exec_always --no-startup-id xautolock -time 10 -corners -000 -locker "$locker -l dim"
+
+# run once
+exec --no-startup-id st -g 100x20 -n "floating_terminal" -f "Iosevka Term:size=11"
+# touchpad configurations
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 279 0
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 287 0.1
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 296 0
+# exec --no-startup-id i3-msg 'workspace 3; exec urxvt -e nnn; workspace 1'
+
+# Open a terminal
+bindsym $mod+Shift+Return exec --no-startup-id st
+
+# Floating terminal
+bindsym $mod+Return [instance="floating_terminal"] scratchpad show
+
+# Switch between recent workspace
+bindsym $mod+Tab workspace back_and_forth
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start rofi (a program launcher)
+bindsym $mod+d exec --no-startup-id rofi -show run -width 40
+
+# start calc with rofi
+bindsym $mod+c exec --no-startup-id rofi -show calc -modi "calc:qalc +u8 -nocurrencies"
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+s move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+s scratchpad show
+
+# Change window focus
+bindsym $mod+Left   focus left
+bindsym $mod+Down   focus down
+bindsym $mod+Up     focus up
+bindsym $mod+Right  focus right
+# vim like
+bindsym $mod+h      focus left
+bindsym $mod+j      focus down
+bindsym $mod+k      focus up
+bindsym $mod+l      focus right
+
+# move focused window
+bindsym $mod+Shift+Left   move left
+bindsym $mod+Shift+Down   move down
+bindsym $mod+Shift+Up     move up
+bindsym $mod+Shift+Right  move right
+# vim like
+bindsym $mod+Shift+h      move left
+bindsym $mod+Shift+j      move down
+bindsym $mod+Shift+k      move up
+bindsym $mod+Shift+l      move right
+
+# split in horizontal orientation
+bindsym $mod+Shift+b split h; exec --no-startup-id notify-send 'Split Horizontally'
+
+# split in vertical orientation
+bindsym $mod+Shift+v split v; exec --no-startup-id notify-send 'Split Verically'
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Rename workspaces
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+bindsym $mod+Shift+6 move container to workspace 6; workspace 6
+bindsym $mod+Shift+7 move container to workspace 7; workspace 7
+bindsym $mod+Shift+8 move container to workspace 8; workspace 8
+
+# focus the parent container
+# bindsym $mod+a focus parent
+bindsym $mod+a focus mode_toggle
+
+# brightness and sound custom add
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% 
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle 
+
+# MPD controL
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# resize window (you can also use the mouse for that)
+mode "Resize" {
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
+	
+	# vim like
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym j resize grow height 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
+	
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "Resize"
+
+# move floating windows with keys
+mode "Move" {
+	bindsym $mod+Tab focus right
+	
+	bindsym Left  move left
+	bindsym Down  move down
+	bindsym Up    move up
+	bindsym Right move right
+	
+	# vim like
+	bindsym h move left
+	bindsym j move down
+	bindsym k move up
+	bindsym l move right
+	
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+m mode "Move" focus floating
+
+# disable title bars nedder for gaps to work properly
+for_window [class="^.*"] border pixel 0
+
+# add gaps for spesific workspace
+# workspace 1 gaps inner 10
+
+# Taking a screenshoot
+bindsym $mod+Print exec --no-startup-id $script/scrot_notify
+bindsym $mod+Shift+Print exec --no-startup-id $script/scrot_notify crop
+
+# Launc networkmanager on rofi
+bindsym $mod+n exec --no-startup-id networkmanager_dmenu
+
+# Launch power-menu script
+bindsym $mod+p exec --no-startup-id $script/rofi-powermenu
+
+# Enable disable Touchpad
+bindsym $mod+t exec --no-startup-id $script/bin/touchpad
+
+# bindsym $mod+g gaps inner current set 0
+# bindsym $mod+Shift+g gaps inner current set 10
+
+# Colors
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
+# class                  border  backgr. text indicator child_border
+client.focused          #C85951  $bg     $fg  $bg       $bg
+client.focused_inactive #C85951  $bg     $fg  $bg       $bg
+client.unfocused        #FFF8E7  $bg     $fg  $bg       $bg
+client.urgent           $bg      $bg     $fg  $bg       $bg
+client.placeholder      $bg      $bg     $fg  $bg       $bg
+client.background       $bg
+
+# Open applications on specific workspace
+assign [class="Firefox"] 2
+assign [class="pcmanfm-qt"] 3
+assign [class="Rhythmbox"] 4
+assign [class="Deluge"] 3
+assign [class="Uget"] 3
+assign [class="VirtualBox"] 5
+assign [title="*Arduino*"] 6
+assign [class="Xreader"] 3
+assign [class="Zathura"] 3
+
+# Open specific applications in floating mode
+for_window [class="Lxappearance"] floating enable
+for_window [class="Mousepad"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="ark"] floating enable
+for_window [class="feh"] floating enable
+for_window [class="Sxiv"] floating enable
+for_window [class="vlc"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
+for_window [window_role="(?i)(?:pop-up|setup)"] floating enable
+for_window [class="mpv"] floating enable
+for_window [class="Gucharmap"] floating enable
+for_window [title="*java*"] floating enable
+for_window [class="Nm-connection-editor"] floating enable
+for_window [class="Surf"] floating enable
+for_window [instance="floating_terminal"] floating toggle
+for_window [instance="floating_terminal"] move scratchpad; [instance="floating_terminal"] scratchpad show; move scratchpad
+for_window [instance="tabbed_surf$"] floating toggle
+# vim:filetype=i3

@@ -1,0 +1,8 @@
+! fonts
+URxvt*font:			xft:IBM Plex Sans:size=11, xft:FontAwesome:size:11
+URxvt*boldFont:		xft:IBM Plex Sans:bold:size=11, xft:FontAwesome:size=11
+URxvt*italicFont:		xft:IBM Plex Sans:italic:size=11, xft:FontAwesome:size=11
+
+st.font:            IBM Plex Sans:size=10
+
+rofi.font: IBM Plex Sans 15

@@ -1,0 +1,3 @@
+let g:shadeline = {}
+let g:shadeline.active = { 'left':  ['fname', 'flags'], 'right': ['ruler'] }
+let g:shadeline.inactive = { 'left':  ['fname', 'flags'] }

@@ -1,0 +1,17 @@
+mutt/.mutt/accounts/*
+newsboat/.newsboat/cache/*
+newsboat/.newsboat/logs/*
+vim/.vim/cache/
+vim/.vim/plugged/*
+vim/.vim/swap/
+zsh/.zsh/cache/*
+zsh/.zsh/autoload/*
+zsh/.zsh/plugins/*
+zsh/.zsh/themes/*
+config/.config/mpv/watch_later/
+config/.config/less/lesshistory
+config/.config/less/lesskey.lwc
+config/.config/weechat/logs/*
+config/.config/ncmpcpp/lyrics/*
+config/.config/cmus/
+config/.config/stig/cache/*

@@ -1,0 +1,6 @@
+! fonts
+URxvt*font:       xft:Monoid Nerd Font:size=9,        xft:FontAwesome:size=9
+URxvt*boldFont:   xft:Monoid Nerd Font:bold:size=9,   xft:FontAwesome:size=9
+URxvt*italicFont: xft:Monoid Nerd Font:italic:size=9, xft:FontAwesome:size=9
+
+rofi.font: Monoid Nerd Font 13

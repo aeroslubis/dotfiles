@@ -1,0 +1,8 @@
+--no-mtime
+-o %(title)s_%(uploader)s.%(ext)s
+--restrict-filenames
+#-R 10
+#--exec 'touch {}'
+#[%(upload_date)s]
+#--external-downloader aria2c
+#--external-downloader-args "-c -j 3 -x 3 -s 3 -k 1M"

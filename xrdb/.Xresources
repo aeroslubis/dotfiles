@@ -1,0 +1,73 @@
+!    _  __________  _________  __  _______________  _____
+!   | |/_/ ___/ _ \/ ___/ __ \/ / / / ___/ ___/ _ \/ ___/
+!  _>  </ /  /  __(__  ) /_/ / /_/ / /  / /__/  __(__  )
+! /_/|_/_/   \___/____/\____/\__,_/_/   \___/\___/____/
+!
+
+! ------------------------------------------------------------------------------
+! Import Colour from ~/.xrdb
+! ------------------------------------------------------------------------------
+#include ".xrdb/colors/tomorrow"
+#include ".xrdb/rofi/nord"
+#include ".xrdb/fonts/iosevka"
+
+! ------------------------------------------------------------------------------
+! URxvt configs
+! ------------------------------------------------------------------------------
+URxvt.geometry:                 120x24
+URxvt*letterSpace:              0
+URxvt.lineSpace:                0
+URxvt*internalBorder:           2
+URxvt.borderLess:               false
+URxvt*depth:                    32
+URxvt*saveline:                 10000
+! URxvt*termName:                 rxvt-unicode-256color
+URxvt*termName:                 xterm-256color-italic
+URxvt*title:                    Urxvt
+URxvt*iso14755:                 false
+URxvt*iso14755_22:              false
+URxvt*scrollBar:                false
+URxvt*scrollBar_right:          false
+URxvt.perl-ext-common:          default,clipboard,vtwheel
+URxvt.copyCommand:              xclip -i -selection clipboard
+URxvt.pasteCommand:             xclip -o -selection clipboard
+URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+URxvt.urlLauncher:              firefox
+URxvt.underlineURLs:            false
+URxvt.urlButton:                1
+URxvt*buffered:                 false
+URxvt.urgentOnBell:             true
+URxvt*cursorUnderline:          true
+URxvt*cursorBlink:              true
+
+! ------------------------------------------------------------------------------
+! Xft Font Configuration
+! ------------------------------------------------------------------------------
+Xft.autohint:                   0
+Xft.dpi:                        96
+Xft.lcdfilter:                  lcddefault
+Xft.hintstyle:                  hintslight
+Xft.hinting:                    true
+Xft.antialias:                  true
+Xft.rgba:                       rgb
+
+! ------------------------------------------------------------------------------
+! Rofi Configuration
+! ------------------------------------------------------------------------------
+rofi.lines:                     5
+rofi.columns:                   1
+rofi.bw:                        1
+rofi.location:                  0
+rofi.padding:                   20
+rofi.margin:                    2
+rofi.fixed-num-lines:           true
+rofi.terminal:                  urxvt
+rofi.ssh-client:                ssh
+rofi.ssh-command:               {terminal} -e {ssh-client} {host}
+rofi.run-command:               {cmd}
+rofi.run-shell-command:         {terminal} -e {cmd}
+rofi.combi-modi:                drun,run
+rofi.line-margin:               2
+rofi.separator-style:           none
+rofi.hide-scrollbar:            true

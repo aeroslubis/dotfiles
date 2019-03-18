@@ -1,0 +1,7 @@
+! fonts
+URxvt*font:         xft:Pragmata Pro Mono:size=11, xft:FontAwesome:size=11
+URxvt*boldFont:     xft:Pragmata Pro Mono:bold:size=11, xft:FontAwesome:size=11
+URxvt*italicFont:   xft:Pragmata Pro Mono:italic:size=11, xft:FontAwesome:size=11
+
+st.font:            Pragmata Pro Mono:size=10:antialias=true:autohint=true;
+rofi.font:          Iosevka Term 15

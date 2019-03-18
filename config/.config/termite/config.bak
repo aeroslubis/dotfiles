@@ -1,0 +1,112 @@
+[options]
+#https://github.com/thestinger/termite/blob/master/config
+allow_bold = true
+audible_bell = false
+browser = firefox
+clickable_url = true
+cursor_blink = system
+cursor_shape = block
+dynamic_title = true
+filter_unmatched_urls = true
+font = Input 11
+geometry = 800x600
+icon_name = terminal
+modify_other_keys = false
+mouse_autohide = true
+scroll_on_output = false
+scroll_on_keystroke = true
+scrollback_lines = 15000
+size_hints = false
+search_wrap = true
+urgent_on_bell = true
+highlight = #30343e
+
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# title      Nord Termite                                    +
+# project    nord-termite                                    +
+# version    0.2.0                                           +
+# repository https://github.com/arcticicestudio/nord-termite +
+# author     Arctic Ice Studio                               +
+# email      development@arcticicestudio.com                 +
+# copyright  Copyright (C) 2016                              +
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+# [colors]
+# foreground = #d8dee8
+# background = #2f343f
+# foreground_bold = #d0d6e0
+# cursor = #b48ead
+# cursor_foreground = #d8dee8
+# 
+# # black
+# color0  = #4b5262
+# color8  = #434a5a
+# 
+# # red
+# color1  = #bf616a
+# color9  = #b3555e
+# 
+# # green
+# color2  = #a3be8c
+# color10 = #93ae7c
+# 
+# # yellow
+# color3  = #ebcb8b
+# color11 = #dbbb7b
+# 
+# # blue
+# color4  = #81a1c1
+# color12 = #7191b1
+# 
+# # magenta
+# color5  = #b48ead
+# color13 = #a6809f
+# 
+# # cyan
+# color6  = #88c0d0
+# color14 = #76aebe
+# 
+# # white
+# color7  = #e5e9f0
+# color15 = #d1d5dc
+
+[colors]
+
+# special
+foreground      = #c5c8c6
+foreground_bold = #c5c8c6
+cursor          = #c5c8c6
+background      = #1d1f21
+
+# black
+color0  = #1d1f21
+color8  = #969896
+
+# red
+color1  = #cc6666
+color9  = #cc6666
+
+# green
+color2  = #b5bd68
+color10 = #b5bd68
+
+# yellow
+color3  = #f0c674
+color11 = #f0c674
+
+# blue
+color4  = #81a2be
+color12 = #81a2be
+
+# magenta
+color5  = #b294bb
+color13 = #b294bb
+
+# cyan
+color6  = #8abeb7
+color14 = #8abeb7
+
+# white
+color7  = #c5c8c6
+color15 = #ffffff
+
