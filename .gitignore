@@ -15,3 +15,11 @@ config/.config/weechat/logs/*
 config/.config/ncmpcpp/lyrics/*
 config/.config/cmus/
 config/.config/stig/cache/*
+config/.config/mpd/playlists/
+config/.config/mpd/mpd.db
+config/.config/mpd/mpd.log
+config/.config/mpd/mpdstate
+config/.config/mpd/mpd.pid
+config/.config/nnn/*
+!config/.config/nnn/config
+!config/.config/nnn/bindings

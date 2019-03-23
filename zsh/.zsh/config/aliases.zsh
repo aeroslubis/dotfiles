@@ -48,18 +48,20 @@ alias ip-public="curl http://ipecho.net/plain; echo"
 alias aria2d="aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all"
 alias dmesg="dmesg --color=always | less"
 alias ip='ip -color' 
-alias search="rg \
-	--color='always' \
-	--heading \
-	--line-number \
-	--no-messages \
-	--no-ignore \
-	--hidden \
-	--follow \
-	--smart-case \
-	--glob '!.git/' \
-	--glob '!node_modules/' \
-	--regexp"
+alias ripgrep="rg \
+    -color='always' \
+    -heading \
+    -line-number \
+    -no-messages \
+    -no-ignore \
+    -hidden \
+    -follow \
+    -smart-case \
+    -glob '!.git/' \
+    -glob '!node_modules/' \
+    -regexp"
+alias fkill="ps -u aeroslubis -o pid,uname,pcpu,pmem,bsdtime,comm \
+    --sort -pcpu | fzy | awk '{ print $1 }' | xargs kill -9"
 
 # alias tmuxd="tmux new-session -s 'aeroslubis' -n 'main'"
 alias tmuxa="tmux attach-session -t aeroslubis"
@@ -87,5 +89,5 @@ alias serve="python ~/Codes/Python/pyserver.py"
 alias 2pdf="libreoffice --headless --invisible --convert-to pdf"
 alias aria2c="aria2c --file-allocation=none"
 alias imdb-rename="imdb-rename --data-dir /mnt/drive-d/Data/imdb-rename"
-alias cp="cpg -g"
-alias mv="mvg -g"
+# alias cp="cpg -g"
+# alias mv="mvg -g"

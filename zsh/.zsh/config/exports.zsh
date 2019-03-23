@@ -36,6 +36,9 @@ eval $(dircolors --sh "$HOME/.dircolors")
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
+# Show dor file on top
+# export LC_COLLATE="C"
+
 # nnn configs
 export NNN_USE_EDITOR=1
 export NNN_BMS='d:~/Downloads;'
@@ -53,6 +56,8 @@ export NNN_CONTEXT_COLORS="4231"
 export NNN_TMPFILE=/tmp/nnn
 export NNN_RESTRICT_NAV_OPEN=1
 export NNN_RESTRICT_0B=1
+# export NNN_OPS_PROG=1
+export NNN_NO_AUTOSELECT=1
 export NNN_CP_MV_PROG=1
 
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
@@ -96,8 +101,8 @@ export LESS=" \
 	--silent \
 	--tabs=4 \
 	--shift=5"
-export LESSOPEN="| highlight $HIGHLIGHT_OPTIONS -- %s 2>/dev/null" # Use `highlight` program to try to highlight opened file according to its extension.
-# export LESSOPEN="| bat -n %s 2>/dev/null" # Use `bat` program to syntax-wise highlight files.
+# export LESSOPEN="| highlight $HIGHLIGHT_OPTIONS -- %s 2>/dev/null" # Use `highlight` program to try to highlight opened file according to its extension.
+export LESSOPEN="| bat -n %s 2>/dev/null" # Use `bat` program to syntax-wise highlight files.
 export LESSHISTFILE="$HOME/.config/less/lesshistory" # Command and search history file.
 export LESSKEYRC="$HOME/.config/less/lesskey" # Path of the uncompiled lesskey file.
 export LESSKEY="$LESSKEYRC.lwc" # Path of the compiled lesskey file.

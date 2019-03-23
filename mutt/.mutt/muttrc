@@ -1,7 +1,7 @@
 # folder-hook 'com.gmail' 'source ~/.mutt/accounts/com.gmail/config.mutt'
 # folder-hook 'com.yahoo' 'source ~/.mutt/accounts/com.yahoo/config.mutt'
-# source ~/.mutt/accounts/com.gmail/config.mutt
-source ~/.mutt/accounts/com.yahoo/config.mutt
+source ~/.mutt/accounts/com.gmail/config.mutt
+# source ~/.mutt/accounts/com.yahoo/config.mutt
 source ~/.mutt/config/settings.mutt
 source ~/.mutt/config/mappings.mutt
 source ~/.mutt/config/colorscheme
