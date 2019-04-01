@@ -17,6 +17,9 @@ cnoremap :s substitute/\v//gc<Left><Left><Left><Left>
 " Construct global command with 'very magic' mode.
 cnoremap :g global/\v/<Left>
 
+" Write ready-only file
+cnoremap w!! w !sudo tee % >/dev/null
+
 " Command mode
 " Pane nagivation.
 nnoremap <C-j> <C-w>j
