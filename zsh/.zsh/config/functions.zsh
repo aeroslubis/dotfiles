@@ -93,13 +93,6 @@ function lman() {
 	man "$cmd" > /dev/null || "$cmd" --help > /dev/null || "$cmd" -h > /dev/null
 }
 
-# displays mounted drive information in a nicely formatted manner
-function mount_info() {
-	(echo "DEVICE PATH TYPE FLAGS" && mount | awk '$2="";1') \
-		| column -t;
-}
-
-
 # `tre`: is a shorthand for `tree` with hidden files and color enabled, ignoring
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is

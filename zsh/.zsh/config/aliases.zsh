@@ -40,6 +40,7 @@ alias note="$EDITOR ~/Documents/notes/index.md"
 
 alias meminfo='free -m -l -t'
 alias cpuinfo='lscpu'
+alias mountinfo='lsblk -f'
 alias psmem='ps auxf | sort -nr -k 4 | head -10' # get top process eating memory
 alias pscpu='ps auxf | sort -nr -k 3 | head -10' # get top process eating cpu ##
 alias chromium-dev="chromium --disable-web-security --user-data-dir"
@@ -61,7 +62,7 @@ alias ripgrep="rg \
     -glob '!node_modules/' \
     -regexp"
 alias fkill="ps -u aeroslubis -o pid,uname,pcpu,pmem,bsdtime,comm \
-    --sort -pcpu | fzy | awk '{ print $1 }' | xargs kill -9"
+    --sort -pcpu | fzy | awk '{ print \$1 }' | xargs kill -9"
 
 # alias tmuxd="tmux new-session -s 'aeroslubis' -n 'main'"
 alias tmuxa="tmux attach-session -t aeroslubis"
@@ -91,3 +92,4 @@ alias aria2c="aria2c --file-allocation=none"
 alias imdb-rename="imdb-rename --data-dir /mnt/drive-d/Data/imdb-rename"
 # alias cp="cpg -g"
 # alias mv="mvg -g"
+alias sreload="exec \$SHELL -l"

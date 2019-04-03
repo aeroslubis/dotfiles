@@ -33,6 +33,12 @@ export PATH=$HOME/Codes/Perl/bin:$PATH
 # dircolors
 eval $(dircolors --sh "$HOME/.dircolors")
 
+# fasd
+eval $(fasd --init zsh-hook)
+
+# direnv
+# eval "$(direnv hook zsh)"
+
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
@@ -126,4 +132,5 @@ export TMUX_SESSION_NAME="aeroslubis"
 export AMPY_PORT=/dev/ttyUSB0
 export AMPY_BAUD=115200
 
-# eval "$(direnv hook zsh)"
+# instagram-crawler sessionid
+export sessionid="2040578353%3A3GmtM2FgEX71pg%3A1"
