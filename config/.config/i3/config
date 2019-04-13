@@ -247,5 +247,6 @@ for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Surf"] floating enable
 for_window [instance="floating_terminal"] floating toggle
 for_window [instance="floating_terminal"] move scratchpad; [instance="floating_terminal"] scratchpad show; move scratchpad
-for_window [instance="tabbed_surf$"] floating toggle
+for_window [instance="tabbed_surf$"] floating enable
+for_window [instance="nnn_sxiv$"] floating enable
 # vim:filetype=i3
