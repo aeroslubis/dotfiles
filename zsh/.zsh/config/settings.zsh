@@ -51,7 +51,7 @@ setopt SHARE_HISTORY # Share history between all sessions.
 KEYTIMEOUT=10 # The time the shell waits, for another key to be pressed in milliseconds.
 setopt NO_CLOBBER # Don't allow `>` redirection to override existing files. Use `>!` instead.
 setopt NO_FLOW_CONTROL # Disable flow control characters `^S` and `^Q`.
-# setopt INTERACTIVE_COMMENTS # Allow comments even in interactive shells.
+setopt INTERACTIVE_COMMENTS # Allow comments even in interactive shells.
 setopt RM_STAR_WAIT # Before executing `rm *` first wait 10 seconds and ignore anything typed.
 
 # Job Control

@@ -38,7 +38,7 @@
 # typeset -g session='aeroslubis'
 
 if ! tmux has-session -t "$TMUX_SESSION_NAME" 2> /dev/null; then
-	if [[ $(stty size | cut -d' ' -f1) > 40 ]]; then
+	if [[ $(stty size | cut -d' ' -f1) > 38 ]]; then
 		tmux new-session -s "$TMUX_SESSION_NAME" -n '  main'
 	fi
 fi

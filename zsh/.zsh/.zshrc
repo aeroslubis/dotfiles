@@ -2,7 +2,7 @@ foreach piece (
 	load.zsh
 	exports.zsh
 	hooks.zsh
-	prompt.zsh
+	# prompt.zsh
 	settings.zsh
 	multiplexer.zsh
 	functions.zsh

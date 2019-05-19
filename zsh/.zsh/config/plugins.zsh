@@ -1,9 +1,25 @@
 # zsh-autopair: Insert or delete brackets, parens, quotes in pair.
 # source "$ZDOTDIR/plugins/zsh-autopair/autopair.zsh"
 
-# source "$ZDOTDIR/themes/ultimate/ultimate.zsh-theme"
-# source "$ZDOTDIR/themes/common/common.zsh-theme"
-# source "$ZDOTDIR/plugins/zsh-interactive-cd.plugin.zsh"
+
+# zsh slimline prompt
+# Right prompt
+export SLIMLINE_LEFT_PROMPT_SECTIONS="vi_mode user_host_info cwd"
+export SLIMLINE_RIGHT_PROMPT_SECTIONS="execution_time exit_status git virtualenv"
+# export SLIMLINE_ALWAYS_SHOW_USER_HOST_INFO="1"
+# Promt symbol format
+export SLIMLINE_SYMBOL_READY_FORMAT="%F{blue}❯%f"
+export SLIMLINE_SYMBOL_WORKING_FORMAT="%F{red}❯%f"
+# Git Indicator
+export GITLINE_REPO_INDICATOR='${reset}'
+export GITLINE_BRANCH='[${blue}${branch}${reset}]'
+# VI Mode
+export SLIMLINE_VI_MODE_NORMAL_FORMAT="%F{yellow}❮❮%f"
+export SLIMLINE_VI_MODE_INSERT_FORMAT="%F{blue}❯❯%f"
+export SLIMLINE_VI_MODE_REPLACE_FORMAT="%F{red}❮❮%f"
+
+source "$ZDOTDIR/plugins/slimline/slimline.zsh"
+
 source "$ZDOTDIR/plugins/smartdots.zsh"
 
 # zsh-auto-suggest

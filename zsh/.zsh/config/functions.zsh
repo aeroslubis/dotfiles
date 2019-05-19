@@ -205,8 +205,10 @@ i3open() {
 }
 
 youtube-pl() {
+    local youtube_videos=$(yutube-dl --dump-json --flat-playlist $1)
+    echo "Downloading $(echo $youtube_videos > /dev/null | wc -l) videos"
     parallel --progress -j3 youtube-dl --config-location ~/.config/youtube-dl/youtube-playlist.conf \
-        :::: <(youtube-dl --dump-json --flat-playlist $1 | jq --raw-output '.url')
+        :::: <(echo $youtube_videos > /dev/null | jq --raw-output '.url')
 }
 
 # Tmux functions

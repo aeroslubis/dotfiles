@@ -227,6 +227,7 @@ assign [class="VirtualBox"] 5
 assign [title="*Arduino*"] 6
 assign [class="Xreader"] 3
 assign [class="Zathura"] 3
+assign [title="*Running*"] 6
 
 # Open specific applications in floating mode
 for_window [class="Lxappearance"] floating enable

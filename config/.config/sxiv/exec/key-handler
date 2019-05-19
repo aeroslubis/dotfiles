@@ -3,7 +3,7 @@ while read file
 do
 	case "$1" in
 		"w")
-			ln -f -s "$(readlink -f $file)" ~/.wallpaper && \
+			ln -f -s "$(readlink -f "$file")" ~/.wallpaper && \
 			/home/aeroslubis/.bin/betterlockscreen -u ~/.wallpaper && \
 			/home/aeroslubis/.bin/betterlockscreen -w
 			notify-send "Wallpaper changed."

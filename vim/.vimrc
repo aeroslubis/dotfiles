@@ -104,20 +104,37 @@ highlight LineNr ctermfg=black
 "endif
 
 " Colorschemes
-" set t_Co=256
+set t_Co=256
 set background=dark
 " set termguicolors
-" let g:monotone_color = [20, 100, 70] " Sets theme color to bright green
+
+" Monotone theme config
+" let g:monotone_color = [20, 100, 70]      " Sets theme color to bright green
 " let g:monotone_secondary_hue_offset = 200 " Offset secondary colors by 200 degrees
-" let g:monotone_emphasize_comments = 1 " Emphasize comments
-" colorscheme onehalfdark
-" colorscheme monotone
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_italic_comments = 1
-let g:nord_uniform_status_lines = 0
-let g:nord_comment_brightness = 12
-colorscheme nord
+" let g:monotone_emphasize_comments = 1     " Emphasize comments
+
+" Nord theme config
+" let g:nord_italic = 1
+" let g:nord_underline = 1
+" let g:nord_italic_comments = 1
+" let g:nord_uniform_status_lines = 0
+" let g:nord_comment_brightness = 12
+
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.dark': {
+  \       'transparent_background': 1,
+  \       'allow_italic': 1,
+  \       'allow_bold': 1
+  \     }
+  \   },
+  \   'language' : {
+  \      'python' : {
+  \         'highlight_builtins' : 1
+  \     }
+  \   }
+  \ }
+colorscheme PaperColor
 
 " make vim use terminal background
 " hi Normal ctermbg=NONE

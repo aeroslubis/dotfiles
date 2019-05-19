@@ -35,6 +35,6 @@ if ! [[ -L $ZDOTDIR/autoload/async ]] {
 }
 
 # Recompile prompt files if it's needed.
-zrecompile -p \
-	-M $ZDOTDIR/autoload/async -- \
-	-M $ZDOTDIR/autoload/prompt_pure_setup
+# zrecompile -p \
+# 	-M $ZDOTDIR/autoload/async -- \
+# 	-M $ZDOTDIR/autoload/prompt_pure_setup

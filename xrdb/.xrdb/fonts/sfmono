@@ -2,4 +2,5 @@
 URxvt*font: xft:SFMono Nerd Font:size=11, xft:FontAwesome:size=11
 URxvt*.boldFont: xft:SF Mono:bold:size=11, xft:FontAwesome:size=11
 
+st.font:            SFMono Nerd Font:size=11:antialias=true:autohint=true;
 rofi.font: SFMono Nerd Font 15
