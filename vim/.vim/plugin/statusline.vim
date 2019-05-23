@@ -21,8 +21,11 @@ set statusline+=%t                  " Path to the file
 "set statusline+=%y                  " File type
 set statusline+=\ %2*\              " Padding & switch colour
 set statusline+=%=                  " Switch to right-side
+" set statusline+="%{fugitive#head()!=''?'\ \ '.fugitive#head().'\ ':''}"
+" set statusline+=\ %3*\              " Padding & switch colour
 set statusline+=\ %3*\              " Padding & switch colour
 
+" set statusline+=%{FugitiveStatusline()}
 set statusline+=\                   " Padding
 set statusline+=%y
 set statusline+=\                   " Padding

@@ -1,10 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/aeroslubis/.oh-my-zsh'
-let g:netrw_dirhist_2='/home/aeroslubis/.oh-my-zsh/plugins'
-let g:netrw_dirhist_3='/home/aeroslubis/.oh-my-zsh'
-let g:netrw_dirhist_4='/home/aeroslubis/.oh-my-zsh/themes'
-let g:netrw_dirhist_5='/mnt/drive-d'
-let g:netrw_dirhist_6='/home/aeroslubis/Arduino/ESP_Webserver_DHT11_Gauges'
-let g:netrw_dirhist_7='/home/aeroslubis/Arduino'
-let g:netrw_dirhist_8='/home/aeroslubis/Arduino/WebServer-WifiManager'
+let g:netrw_dirhist_cnt =0
