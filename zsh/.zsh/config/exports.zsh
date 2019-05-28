@@ -22,10 +22,10 @@ export BROWSER='firefox'
 
 # PATH
 export PATH=$HOME/.node/bin:$PATH
-export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.bin:$PATH
-export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
+# export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
+export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 export PATH=$HOME/Codes/Bash/bin:$PATH
 export PATH=$HOME/Codes/Python/bin:$PATH
 export PATH=$HOME/Codes/Perl/bin:$PATH
@@ -35,6 +35,10 @@ eval $(dircolors --sh "$HOME/.dircolors")
 
 # fasd
 eval $(fasd --init zsh-hook)
+
+# virtualenv wrapper
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
 
 # direnv
 # eval "$(direnv hook zsh)"
@@ -72,6 +76,7 @@ export PYLINTRC="$PYLINTHOME/pylintrc"
 export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/bat.conf"
 export TASKDDATA=/var/lib/taskd
 export UMCONFIG_HOME="$XDG_CONFIG_HOME/um"
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep"
 
 # fzf
 export FZF_DEFAULT_COMMAND="rg \

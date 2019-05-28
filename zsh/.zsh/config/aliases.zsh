@@ -9,6 +9,8 @@ alias cp="cp -v"
 alias mv="mv -v"
 alias cpg="cpg -g"     # cp with progress bar
 alias mvg="mvg -g"     # mv with progress bar
+alias o='xdg-open'
+alias p="less"
 
 # Command line head / tail shortcuts
 # alias H='| head'
@@ -24,9 +26,6 @@ alias mvg="mvg -g"     # mv with progress bar
 
 alias dirspace='du --max-depth=1 --si'
 alias freespace='df -H /dev/sda4 /dev/sda6'
-alias o='xdg-open'
-# alias c="bat --theme 1337 --style numbers"
-alias p="less"
 alias extract="patool extract"
 alias feh="feh --scale-down -g 1280x720"
 alias wifi="nmcli device wifi"
@@ -51,21 +50,10 @@ alias pscpu='ps auxf | sort -nr -k 3 | head -10' # get top process eating cpu ##
 alias chromium-dev="chromium --disable-web-security --user-data-dir"
 alias dim="xbacklight -set 0.2"
 alias ip-public="curl http://ipecho.net/plain; echo"
-alias aria2d="aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all"
-alias dmesg="dmesg --color=always | less"
+alias aria2d="aria2c --enable-rpc --rpc-secret=bonceel12 --rpc-listen-port=7850 --no-conf \
+    2>/dev/null 1>/dev/null"
+alias dmesg="dmesg --color=always"
 alias ip='ip -color' 
-alias rg="rg \
-    -color='always' \
-    -heading \
-    -line-number \
-    -no-messages \
-    -no-ignore \
-    -hidden \
-    -follow \
-    -smart-case \
-    -glob '!.git/' \
-    -glob '!node_modules/' \
-    -regexp"
 alias fkill="ps -u aeroslubis -o pid,uname,pcpu,pmem,bsdtime,comm \
     --sort -pcpu | fzy | awk '{ print \$1 }' | xargs kill -9"
 
@@ -93,7 +81,6 @@ alias getpage="wget --no-clobber --page-requisites --html-extension --convert-li
 alias help="tldr"
 alias serve="python ~/Codes/Python/pyserver.py" # Serve current directory over wifi
 alias 2pdf="libreoffice --headless --invisible --convert-to pdf"
-# alias aria2c="aria2c --file-allocation=none"
 alias imdb-rename="imdb-rename --data-dir /mnt/drive-d/Data/imdb-rename"
 alias sreload="exec \$SHELL -l"
 alias vbox="vboxmanage"

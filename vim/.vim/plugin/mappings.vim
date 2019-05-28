@@ -20,7 +20,7 @@ cnoremap :g global/\v/<Left>
 " Write ready-only file
 cnoremap w!! w !sudo tee % >/dev/null
 
-" Command mode
+" Normal mode
 " Pane nagivation.
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -151,3 +151,12 @@ nnoremap <silent> <Leader>W :wq<Enter>
 " Insert an empty new line without entering insert mode.
 nnoremap <Leader>o :<C-u>put =repeat(nr2char(10), v:count1)<Enter>
 nnoremap <Leader>O :<C-u>put! =repeat(nr2char(10), v:count1)<Enter>
+
+" Replace the word under cursor
+nnoremap <leader>* :%s/\<<c-r><c-w>\>//gc<left><left>
+
+" Move lines around
+nnoremap <leader>k :m-2<cr>==
+nnoremap <leader>j :m+<cr>==
+xnoremap <leader>k :m-2<cr>gv=gv
+xnoremap <leader>j :m'>+<cr>gv=gv
