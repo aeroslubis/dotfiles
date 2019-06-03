@@ -2,16 +2,7 @@
 set-option -g prefix C-a
 
 # Default term.
-# set-option -g default-terminal "screen-256color"
-# set-option -g default-terminal "tmux-256color"
-
-# set -g terminal-overrides ',xterm-256color:Tc'
-# set -g default-terminal "tmux-256color"
 set -g default-terminal "st-256color"
-# set -as terminal-overrides ',xterm*:sitm=\E[3m'
-
-# set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
-# set -g default-terminal "screen-256color-italic"
 
 # Enable vi style key bindings in command mode.
 set-option -g mode-keys vi
@@ -35,7 +26,7 @@ set-option -g pane-base-index 1
 set-option -g renumber-windows on
 
 # Allow programs to change title using a escape sequence.
-# set-option -g allow-rename on
+set-option -g allow-rename on
 
 # Don't show "Activity in window X" messages.
 set-option -g visual-activity off
@@ -50,8 +41,8 @@ set-option -g automatic-rename on
 # set-option -g -a terminal-overrides ',xterm-256color:Tc' # True color support.
 
 # direnv
-set-option -g update-environment "DIRENV_DIFF DIRENV_DIR DIRENV_WATCHES"
-set-environment -gu DIRENV_DIFF
-set-environment -gu DIRENV_DIR
-set-environment -gu DIRENV_WATCHES
-set-environment -gu DIRENV_LAYOUT
+# set-option -g update-environment "DIRENV_DIFF DIRENV_DIR DIRENV_WATCHES"
+# set-environment -gu DIRENV_DIFF
+# set-environment -gu DIRENV_DIR
+# set-environment -gu DIRENV_WATCHES
+# set-environment -gu DIRENV_LAYOUT

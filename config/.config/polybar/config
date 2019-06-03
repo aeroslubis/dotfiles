@@ -1,9 +1,9 @@
-#                  __      __              
+#                  __      __
 #     ____  ____  / /_  __/ /_  ____ ______
 #    / __ \/ __ \/ / / / / __ \/ __ `/ ___/
-#   / /_/ / /_/ / / /_/ / /_/ / /_/ / /    
-#  / .___/\____/_/\__, /_.___/\__,_/_/     
-# /_/            /____/                    
+#   / /_/ / /_/ / / /_/ / /_/ / /_/ / /
+#  / .___/\____/_/\__, /_.___/\__,_/_/
+# /_/            /____/
 
 [colors]
 background = ${xrdb:background}
@@ -52,7 +52,7 @@ font-1 = Font Awesome:size=10;2
 
 modules-left = i3
 modules-center = xwindow
-modules-right = filesystem cpu memory temperature wlan wlan2 volume date
+modules-right = filesystem cpu memory temperature wlan volume date
 
 tray-position = right
 tray-padding = 2
@@ -66,14 +66,7 @@ cursor-scroll = ns-resize
 
 [module/cal]
 type = custom/script
-exec = date '+%a %l:%M %p' | sed 's/  / /'
-interval = 30
-format-foreground = ${colors.foreground-alt}
-label-font = 4
-
-[module/virtualbox]
-type = custom/script
-exec = ~/.config/polybar/scripts/virtualbox
+exec = "date '+%a%l:%M %p'"
 interval = 30
 format-foreground = ${colors.foreground-alt}
 label-font = 4
@@ -81,8 +74,8 @@ label-font = 4
 [module/date]
 type = internal/date
 interval = 30
-time=%a %l:%M %p
-date-alt=%d %b %Y
+time= %a %l:%M %p
+date-alt= %d %b %Y
 format-foreground = ${colors.foreground-alt}
 label = %time%%date% 
 
@@ -151,7 +144,6 @@ label-connected =  %essid%
 label-connected-foreground = ${colors.foreground}
 
 # label-disconnected = %{A:nm-connection-editor&:} disconnected%{A}
-# label-disconnected =  disconnected
 label-disconnected =
 label-disconnected-foreground = ${colors.foreground-alt}
 

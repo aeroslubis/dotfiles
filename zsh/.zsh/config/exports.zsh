@@ -19,12 +19,12 @@ export EDITOR='vim'
 export PAGER='less'
 # export VISUAL='mousepad'
 export BROWSER='firefox'
+export PLAYER='mpv --no-video'
 
 # PATH
 export PATH=$HOME/.node/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.bin:$PATH
-# export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
 export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 export PATH=$HOME/Codes/Bash/bin:$PATH
 export PATH=$HOME/Codes/Python/bin:$PATH
@@ -37,8 +37,8 @@ eval $(dircolors --sh "$HOME/.dircolors")
 eval $(fasd --init zsh-hook)
 
 # virtualenv wrapper
-export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+# export WORKON_HOME=~/.virtualenvs
+# source /usr/bin/virtualenvwrapper.sh
 
 # direnv
 # eval "$(direnv hook zsh)"
@@ -46,8 +46,8 @@ source /usr/bin/virtualenvwrapper.sh
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
-# Show dor file on top
-# export LC_COLLATE="C"
+# Show dot file on top
+export LC_COLLATE="C"
 
 # nnn configs
 export NNN_USE_EDITOR=1
@@ -59,7 +59,7 @@ export NNN_BMS='d:~/Downloads;'
        NNN_BMS+='M:/mnt/drive-d/Files/Music;'
        NNN_BMS+='m:~/Media;'
        NNN_BMS+='u:/media/usbdrive'
-export NNN_SCRIPT=~/.config/nnn/scripts
+# export NNN_SCRIPT=~/.config/nnn/scripts
 export NNN_COPIER=~/.config/nnn/copier
 export NNN_NOTE=~/.config/nnn/note
 export NNN_CONTEXT_COLORS="4231"
@@ -74,9 +74,9 @@ export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 export PYLINTHOME="$XDG_CONFIG_HOME/pylint.d"
 export PYLINTRC="$PYLINTHOME/pylintrc"
 export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/bat.conf"
-export TASKDDATA=/var/lib/taskd
 export UMCONFIG_HOME="$XDG_CONFIG_HOME/um"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep"
+export ELINKS_CONFDIR="$XDG_CONFIG_HOME/elinks"
 
 # fzf
 export FZF_DEFAULT_COMMAND="rg \
@@ -97,7 +97,11 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
 	--bind='ctrl-f:jump-accept'"
 
 # highlight
-export HIGHLIGHT_OPTIONS='--line-numbers --line-number-length=2 --out-format=xterm256 --base16 --style=tomorrow-night'
+export HIGHLIGHT_OPTIONS="--line-numbers \
+    --line-number-length=2 \
+    --out-format=xterm256 \
+    --base16 \
+    --style=tomorrow-night"
 
 # less
 export LESS=" \

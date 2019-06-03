@@ -1,7 +1,0 @@
-#!/bin/sh
-tmux new-session -s "aeroslubis" -d -n 'main'
-tmux split-window -h -l 68
-tmux select-pane -L
-tmux split-window -v
-tmux select-pane -R
-tmux -2 attach-session -d

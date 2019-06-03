@@ -3,22 +3,22 @@
 
 
 # zsh slimline prompt
-# Right prompt
-export SLIMLINE_LEFT_PROMPT_SECTIONS="vi_mode user_host_info cwd"
-export SLIMLINE_RIGHT_PROMPT_SECTIONS="execution_time exit_status git virtualenv"
-# export SLIMLINE_ALWAYS_SHOW_USER_HOST_INFO="1"
-# Promt symbol format
-export SLIMLINE_SYMBOL_READY_FORMAT="%F{blue}❯%f"
-export SLIMLINE_SYMBOL_WORKING_FORMAT="%F{red}❯%f"
-# Git Indicator
-export GITLINE_REPO_INDICATOR='${reset}'
-export GITLINE_BRANCH='[${blue}${branch}${reset}]'
-# VI Mode
-export SLIMLINE_VI_MODE_NORMAL_FORMAT="%F{yellow}❮❮%f"
-export SLIMLINE_VI_MODE_INSERT_FORMAT="%F{blue}❯❯%f"
-export SLIMLINE_VI_MODE_REPLACE_FORMAT="%F{red}❮❮%f"
+# # Right prompt
+# export SLIMLINE_LEFT_PROMPT_SECTIONS="vi_mode user_host_info cwd"
+# export SLIMLINE_RIGHT_PROMPT_SECTIONS="execution_time exit_status git virtualenv"
+# # export SLIMLINE_ALWAYS_SHOW_USER_HOST_INFO="1"
+# # Promt symbol format
+# export SLIMLINE_SYMBOL_READY_FORMAT="%F{blue}❯%f"
+# export SLIMLINE_SYMBOL_WORKING_FORMAT="%F{red}❯%f"
+# # Git Indicator
+# export GITLINE_REPO_INDICATOR='${reset}'
+# export GITLINE_BRANCH='[${blue}${branch}${reset}]'
+# # VI Mode
+# export SLIMLINE_VI_MODE_NORMAL_FORMAT="%F{yellow}❮❮%f"
+# export SLIMLINE_VI_MODE_INSERT_FORMAT="%F{blue}❯❯%f"
+# export SLIMLINE_VI_MODE_REPLACE_FORMAT="%F{red}❮❮%f"
 
-source "$ZDOTDIR/plugins/slimline/slimline.zsh"
+# source "$ZDOTDIR/plugins/slimline/slimline.zsh"
 
 source "$ZDOTDIR/plugins/smartdots.zsh"
 
@@ -61,34 +61,3 @@ source "$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 source "$ZDOTDIR/plugins/base16-shell/base16-shell.plugin.zsh"
 source "$ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
-
-# zsh-syntax-highlighting: Syntax highlighting support.
-# source "$ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-# 	typeset -ga ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-# 	typeset -gA ZSH_HIGHLIGHT_STYLES
-# 
-# 	# brackets
-# 	ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]='bg=black'
-# 	ZSH_HIGHLIGHT_STYLES[default]=none
-# 	ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
-# 	ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=green
-# 	ZSH_HIGHLIGHT_STYLES[alias]=none
-# 	ZSH_HIGHLIGHT_STYLES[builtin]=none
-# 	ZSH_HIGHLIGHT_STYLES[function]=none
-# 	ZSH_HIGHLIGHT_STYLES[command]=none
-# 	ZSH_HIGHLIGHT_STYLES[precommand]=none
-# 	ZSH_HIGHLIGHT_STYLES[commandseparator]=none
-# 	ZSH_HIGHLIGHT_STYLES[hashed-command]=none
-# 	ZSH_HIGHLIGHT_STYLES[path]=none
-# 	ZSH_HIGHLIGHT_STYLES[globbing]=none
-# 	ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=blue
-# 	ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=none
-# 	ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=none
-# 	ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
-# 	ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=yellow
-# 	ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=yellow
-# 	ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=cyan
-# 	ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=cyan
-# 	ZSH_HIGHLIGHT_STYLES[assign]=none
-# 
-# 	ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=red,bg=black') 

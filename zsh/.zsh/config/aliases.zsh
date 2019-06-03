@@ -40,7 +40,9 @@ alias cpolybar="$EDITOR ~/.config/polybar/config"
 alias cxresources="$EDITOR ~/.Xresources"
 alias cmerge='xrdb ~/.Xresources'
 alias csource="source ~/.zsh/.zshrc"
-alias note="$EDITOR ~/Documents/notes/index.md"
+
+alias note="$PAGER ~/Documents/notes/index.md"
+alias enote="$EDITOR ~/Documents/notes/index.md"
 
 alias meminfo='free -m -l -t'
 alias cpuinfo='lscpu'
@@ -50,7 +52,8 @@ alias pscpu='ps auxf | sort -nr -k 3 | head -10' # get top process eating cpu ##
 alias chromium-dev="chromium --disable-web-security --user-data-dir"
 alias dim="xbacklight -set 0.2"
 alias ip-public="curl http://ipecho.net/plain; echo"
-alias aria2d="aria2c --enable-rpc --rpc-secret=bonceel12 --rpc-listen-port=7850 --no-conf \
+alias aria2d="aria2c --enable-rpc --rpc-secret=4jCAtTQBbsxuNhC9HMzB7dYwCzviW6ku \
+    --rpc-listen-port=7850 --no-conf \
     2>/dev/null 1>/dev/null"
 alias dmesg="dmesg --color=always"
 alias ip='ip -color' 

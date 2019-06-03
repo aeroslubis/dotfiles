@@ -1,8 +1,14 @@
 # newsboat
 bind-key K \
-    new-window -n newsboat newsboat --quiet \; \
+    new-window -n newsboat 'newsboat --quiet' \; \
     set-window-option allow-rename off \; \
     rename-window '  news'
+
+# elinks
+bind-key W \
+    new-window -n web "elinks -config-dir ~/.config/elinks/" \; \
+    set-window-option allow-rename off \; \
+    rename-window '  web'
 
 # htop
 bind-key H \
@@ -43,16 +49,3 @@ bind-key C \
     new-window -n chat 'TERM=screen-256color weechat' \; \
     set-window-option allow-rename off \; \
     rename-window '  chat'
-
-bind-key V \
-    new-window -n stat \; \
-    send-keys 'graph-cpu' 'Enter' \; \
-    split-window -h \; \
-    send-keys 'graph-memory' 'Enter' \; \
-    split-window -v \; \
-    send-keys 'graph-network' 'Enter' \; \
-    select-pane -L \; \
-    split-window -v \; \
-    send-keys 'graph-temp' 'Enter' \; \
-    set-window-option allow-rename off \; \
-    rename-window 'stat'

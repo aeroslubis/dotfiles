@@ -1,42 +1,4 @@
-# function should_launch_multiplexer() {
-# 	if (! hash tmux 2>/dev/null) {
-# 		return 1
-# 	}
-# 
-# 	if [[ $NVIM_LISTEN_ADDRESS != '' ]] {
-# 		return 0
-# 	} elif (
-# 		[[ $TMUX == '' ]] \
-# 		&& [[ $SUDO_USER == '' ]] \
-# 		&& [[ $EMACS == '' ]] \
-# 		&& [[ $SSH_CONNECTION == '' ]] \
-# 		&& [[ ! $OSTYPE =~ 'linux-android*' ]] 2>/dev/null
-# 	) {
-# 		return 0
-# 	}
-# 
-# 	return 1
-# }
-# 
-# # Auto-attach tmux or start at launch with different sessions based on platforms.
-# if (should_launch_multiplexer) {
-# 	typeset -g session='main'
-# 	typeset -g launch_options="-n 'main'\; "
-# 
-# 	tmux attach-session -t "$session" 2>/dev/null \
-# 		&& exit 0
-# 
-# 	eval tmux new-session -s "$session" $launch_options \
-# 		&& exit 0
-# 
-# 	unset session
-# 	unset launch_options
-# }
-# 
-# unset -f should_launch_multiplexer
-# 
-# typeset -g session='aeroslubis'
-
+# Automatically open tmux if there is no tmux session
 if ! tmux has-session -t "$TMUX_SESSION_NAME" 2> /dev/null; then
 	if [[ $(stty size | cut -d' ' -f1) > 38 ]]; then
 		tmux new-session -s "$TMUX_SESSION_NAME" -n '  main'
