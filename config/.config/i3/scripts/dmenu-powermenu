@@ -1,0 +1,24 @@
+#!/bin/bash
+
+locker="$HOME/.bin/betterlockscreen"
+
+lock_command="$locker -l dim"
+suspend_command="$locker -s dim"
+reboot_command="systemctl reboot"
+poweroff_command="systemctl poweroff"
+logout_command="i3-msg exit"
+# hibernate_command="systemctl hibernate"
+
+# you can customise the rofi command all you want ...
+rofi_command="rofi -width 20"
+
+options=$' Lock\n Suspend\n Logout\n Reboot\n Poweroff' 
+
+response=$(echo "$options" | dmenu -fn "Iosevka Term" -b -p "Power Menu" | cut -d' ' -f2)
+case $response in
+	Lock)       $lock_command       ;;
+	Suspend)    $suspend_command    ;;
+	Logout)     $logout_command     ;;
+	Reboot)     $reboot_command     ;;
+	Poweroff)   $poweroff_command   ;;
+esac

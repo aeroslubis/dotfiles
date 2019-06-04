@@ -8,7 +8,7 @@
 #
 set $mod Mod4
 set $locker ~/.bin/betterlockscreen
-set $script ~/Codes/Bash
+set $scripts ~/.config/i3/scripts
 
 font pango:Roboto, FontAwesome 10
 
@@ -33,6 +33,7 @@ exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 287 0.1
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 296 0
 # exec --no-startup-id i3-msg 'workspace 3; exec urxvt -e nnn; workspace 1'
 
+# #---Basic Bindings---# #
 # Open a terminal
 bindsym $mod+Shift+Return exec --no-startup-id st
 
@@ -48,14 +49,30 @@ bindsym $mod+Shift+q kill
 # start rofi (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show run -width 40
 
-# start calc with rofi
-bindsym $mod+c exec --no-startup-id rofi -show calc -modi "calc:qalc +u8 -nocurrencies"
-
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+s move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+s scratchpad show
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+a focus mode_toggle
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
 
 # Change window focus
 bindsym $mod+Left   focus left
@@ -80,24 +97,35 @@ bindsym $mod+Shift+k      move up
 bindsym $mod+Shift+l      move right
 
 # split in horizontal orientation
-bindsym $mod+Shift+b split h; exec --no-startup-id notify-send 'Split Horizontally'
+bindsym $mod+Shift+i split h; exec --no-startup-id notify-send 'Split Horizontally'
 
 # split in vertical orientation
 bindsym $mod+Shift+v split v; exec --no-startup-id notify-send 'Split Verically'
 
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+# #---Custom Bindings---# #
+# Taking a screenshoot
+bindsym $mod+Print exec --no-startup-id $scripts/scrot_notify
+bindsym $mod+Shift+Print exec --no-startup-id $scripts/scrot_notify crop
+# Launc networkmanager on rofi
+bindsym $mod+n exec --no-startup-id networkmanager_dmenu
+# Launch power-menu script
+bindsym $mod+p exec --no-startup-id $scripts/rofi-powermenu
+# Enable disable Touchpad
+bindsym $mod+t exec --no-startup-id $scripts/bin/touchpad
 
-# change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# start calc with rofi
+bindsym $mod+c exec --no-startup-id rofi -show calc -modi "calc:qalc +u8 -nocurrencies"
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+# Porn mode/Hide everything
+bindsym $mod+Shift+Delete    exec --no-startup-id $scripts/pornmode
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# Show clippboard selection:
+bindsym $mod+Insert     exec --no-startup-id $scripts/showclip
+bindsym $mod+Delete     exec --no-startup-id $scripts/xcqr
+
+# Dock floating window to left or right screen
+bindsym $mod+Shift+b    exec --no-startup-id $scripts/bottomleft
+bindsym $mod+Shift+n    exec --no-startup-id $scripts/bottomright
 
 # Rename workspaces
 bindsym $mod+1 workspace 1
@@ -119,10 +147,6 @@ bindsym $mod+Shift+6 move container to workspace 6; workspace 6
 bindsym $mod+Shift+7 move container to workspace 7; workspace 7
 bindsym $mod+Shift+8 move container to workspace 8; workspace 8
 
-# focus the parent container
-# bindsym $mod+a focus parent
-bindsym $mod+a focus mode_toggle
-
 # brightness and sound custom add
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
@@ -137,48 +161,49 @@ bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+set $freeze Distraction-free
+mode "$freeze" {
+    bindsym $mod+Shift+f mode "default"
+}
+bindsym $mod+Shift+f    mode "$freeze" ;; exec --no-startup-id notify-send "Distraction-free mode activated." "Press Super+Shift+f to return."
 # resize window (you can also use the mouse for that)
 mode "Resize" {
-	bindsym Left resize shrink width 10 px or 10 ppt
-	bindsym Down resize grow height 10 px or 10 ppt
-	bindsym Up resize shrink height 10 px or 10 ppt
-	bindsym Right resize grow width 10 px or 10 ppt
-	
-	# vim like
-	bindsym h resize shrink width 10 px or 10 ppt
-	bindsym j resize grow height 10 px or 10 ppt
-	bindsym k resize shrink height 10 px or 10 ppt
-	bindsym l resize grow width 10 px or 10 ppt
-	
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    bindsym Left resize shrink width 50 px or 50 ppt
+    bindsym Down resize grow height 50 px or 50 ppt
+    bindsym Up resize shrink height 50 px or 50 ppt
+    bindsym Right resize grow width 50 px or 50 ppt
+
+    # vim like
+    bindsym h resize shrink width 50 px or 50 ppt
+    bindsym j resize grow height 50 px or 50 ppt
+    bindsym k resize shrink height 50 px or 50 ppt
+    bindsym l resize grow width 50 px or 50 ppt
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "Resize"
 
 # move floating windows with keys
 mode "Move" {
-	bindsym $mod+Tab focus right
-	
-	bindsym Left  move left
-	bindsym Down  move down
-	bindsym Up    move up
-	bindsym Right move right
-	
-	# vim like
-	bindsym h move left
-	bindsym j move down
-	bindsym k move up
-	bindsym l move right
-	
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    bindsym $mod+Tab focus right
+
+    bindsym Left  move left
+    bindsym Down  move down
+    bindsym Up    move up
+    bindsym Right move right
+
+    # vim like
+    bindsym h move left
+    bindsym j move down
+    bindsym k move up
+    bindsym l move right
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $mod+m mode "Move" focus floating
@@ -189,33 +214,31 @@ for_window [class="^.*"] border pixel 0
 # add gaps for spesific workspace
 # workspace 1 gaps inner 10
 
-# Taking a screenshoot
-bindsym $mod+Print exec --no-startup-id $script/scrot_notify
-bindsym $mod+Shift+Print exec --no-startup-id $script/scrot_notify crop
+# Set Xresources colors:
+set_from_resource $darkblack    color0  #000000
+set_from_resource $black        color8  #000000
+set_from_resource $darkred      color1  #000000
+set_from_resource $red          color9  #000000
+set_from_resource $darkgreen    color2  #000000
+set_from_resource $green        color10 #000000
+set_from_resource $darkyellow   color3  #000000
+set_from_resource $yellow       color11 #000000
+set_from_resource $darkblue     color4  #000000
+set_from_resource $blue         color12 #000000
+set_from_resource $darkmagenta  color5  #000000
+set_from_resource $magenta      color13 #000000
+set_from_resource $darkcyan     color6  #000000
+set_from_resource $cyan         color14 #000000
+set_from_resource $darkwhite    color7  #000000
+set_from_resource $white        color15 #000000
+set $transparent                #00000000
 
-# Launc networkmanager on rofi
-bindsym $mod+n exec --no-startup-id networkmanager_dmenu
-
-# Launch power-menu script
-bindsym $mod+p exec --no-startup-id $script/rofi-powermenu
-
-# Enable disable Touchpad
-bindsym $mod+t exec --no-startup-id $script/bin/touchpad
-
-# bindsym $mod+g gaps inner current set 0
-# bindsym $mod+Shift+g gaps inner current set 10
-
-# Colors
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
-
-# class                  border  backgr. text indicator child_border
-client.focused          #C85951  $bg     $fg  $bg       $bg
-client.focused_inactive #C85951  $bg     $fg  $bg       $bg
-client.unfocused        #FFF8E7  $bg     $fg  $bg       $bg
-client.urgent           $bg      $bg     $fg  $bg       $bg
-client.placeholder      $bg      $bg     $fg  $bg       $bg
-client.background       $bg
+#                       BORDER          BACKGROUND  TEXT        INDICATOR       CHILD_BORDER
+client.focused          $red            $red        $magenta    $darkmagenta    $darkblue
+client.unfocused        $transparent    $blue       $white      $darkblue       $darkblack
+client.focused_inactive $transparent    $blue       $white      $darkblue       $darkblack
+client.urgent           $darkred        $darkred    $black      $darkred        $darkred
+client.background       $black
 
 # Open applications on specific workspace
 assign [class="Firefox"] 2
@@ -228,6 +251,23 @@ assign [title="*Arduino*"] 6
 assign [class="Xreader"] 3
 assign [class="Zathura"] 3
 assign [title="*Running*"] 6
+
+# General dropdown window traits. The order can matter.
+for_window [instance="dropdown_*"] floating enable
+for_window [instance="dropdown_*"] move scratchpad
+for_window [instance="dropdown_*"] sticky enable
+for_window [instance="dropdown_*"] scratchpad show
+for_window [instance="dropdown_tmuxdd"] resize set 625 450
+for_window [instance="dropdown_dropdowncalc"] resize set 800 300
+for_window [instance="dropdown_tmuxdd"] border pixel 3
+for_window [instance="dropdown_dropdowncalc"] border pixel 2
+for_window [instance="dropdown_*"] move position center
+
+for_window [class="sent"] border pixel 0px
+for_window [title="GIMP Startup"] move workspace $ws5
+for_window [class="Gimp"] move workspace $ws5
+for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
+for_window [title="Default - Wine desktop"] floating enable
 
 # Open specific applications in floating mode
 for_window [class="Lxappearance"] floating enable

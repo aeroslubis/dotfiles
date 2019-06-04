@@ -19,7 +19,9 @@ export EDITOR='vim'
 export PAGER='less'
 # export VISUAL='mousepad'
 export BROWSER='firefox'
+export FILE='nnn'
 export PLAYER='mpv --no-video'
+export TERMINAL='st -f "Iosevka Term:size=11"'
 
 # PATH
 export PATH=$HOME/.node/bin:$PATH

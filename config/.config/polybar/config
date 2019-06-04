@@ -52,7 +52,7 @@ font-1 = Font Awesome:size=10;2
 
 modules-left = i3
 modules-center = xwindow
-modules-right = filesystem cpu memory temperature wlan volume date
+modules-right = filesystem cpu memory temperature wlan wlan2 volume date
 
 tray-position = right
 tray-padding = 2
@@ -149,7 +149,7 @@ label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/wlan2]
 type = internal/network
-interface = wlo2
+interface = wlp0s29u1u3
 interval = 3
 
 # label-connected = %{A:nm-connection-editor&:} %essid%%{A}

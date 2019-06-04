@@ -153,7 +153,7 @@ nnoremap <Leader>o :<C-u>put =repeat(nr2char(10), v:count1)<Enter>
 nnoremap <Leader>O :<C-u>put! =repeat(nr2char(10), v:count1)<Enter>
 
 " Replace the word under cursor
-nnoremap <leader>* :%s/\<<c-r><c-w>\>//gc<left><left>
+nnoremap <leader>* :%s/\<<c-r><c-w>\>//gc<left><left><left>
 
 " Move lines around
 nnoremap <leader>k :m-2<cr>==
