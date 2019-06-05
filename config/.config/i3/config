@@ -152,9 +152,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% 
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle 
+bindsym XF86AudioRaiseVolume exec --no-startup-id $scripts/pulseaudio up
+bindsym XF86AudioLowerVolume exec --no-startup-id $scripts/pulseaudio down
+bindsym XF86AudioMute exec --no-startup-id $scripts/pulseaudio mute
 
 # MPD controL
 bindsym XF86AudioPlay exec mpc toggle
