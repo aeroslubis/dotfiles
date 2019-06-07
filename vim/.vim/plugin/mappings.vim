@@ -1,3 +1,13 @@
+" Function
+" Yank to clipboard
+function! ClipboardYank()
+  call system('xclip -i -selection clipboard', @@)
+endfunction
+" Paste from clipboard
+function! ClipboardPaste()
+  let @@ = system('xclip -o -selection clipboard')
+endfunction
+
 " Command mode
 " Jump to the beginning and end of line.
 cnoremap <C-a> <Home>
@@ -160,3 +170,10 @@ nnoremap <leader>k :m-2<cr>==
 nnoremap <leader>j :m+<cr>==
 xnoremap <leader>k :m-2<cr>gv=gv
 xnoremap <leader>j :m'>+<cr>gv=gv
+
+" Yank to clipboard
+vnoremap <silent> <Leader>y y:call ClipboardYank()<cr>
+vnoremap <silent> <Leader>d d:call ClipboardYank()<cr>
+nnoremap <silent> <Leader>p :call ClipboardPaste()<cr>p
+
+

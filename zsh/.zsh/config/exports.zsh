@@ -1,10 +1,4 @@
 # -*- mode: sh; -*-
-# Profile
-export NAME="Aeros Jarot Lubis"
-export NIK="1106120204960001"
-export DATEOFBIRTH="Banda Aceh, 13-11-1996"
-export PLACE="Jl.Meunasah Tuha, Ds.Tanjung Deah, Kc.Darussalam, Kb.Aceh Besar"
-
 # Locale
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
@@ -21,7 +15,7 @@ export PAGER='less'
 export BROWSER='firefox'
 export FILE='nnn'
 export PLAYER='mpv --no-video'
-export TERMINAL='st -f "Iosevka Term:size=11"'
+export TERMINAL='termite'
 
 # PATH
 export PATH=$HOME/.node/bin:$PATH

@@ -8,7 +8,7 @@
 ! Import Colour from ~/.xrdb
 ! ------------------------------------------------------------------------------
 #include ".xrdb/colors/tomorrow"
-#include ".xrdb/rofi/nord"
+/* #include ".xrdb/rofi/nord" */
 #include ".xrdb/fonts/iosevka"
 
 ! ------------------------------------------------------------------------------
@@ -51,23 +51,3 @@ Xft.hintstyle:                  hintslight
 Xft.hinting:                    true
 Xft.antialias:                  true
 Xft.rgba:                       rgb
-
-! ------------------------------------------------------------------------------
-! Rofi Configuration
-! ------------------------------------------------------------------------------
-rofi.lines:                     5
-rofi.columns:                   1
-rofi.bw:                        1
-rofi.location:                  0
-rofi.padding:                   20
-rofi.margin:                    2
-rofi.fixed-num-lines:           true
-rofi.terminal:                  urxvt
-rofi.ssh-client:                ssh
-rofi.ssh-command:               {terminal} -e {ssh-client} {host}
-rofi.run-command:               {cmd}
-rofi.run-shell-command:         {terminal} -e {cmd}
-rofi.combi-modi:                drun,run
-rofi.line-margin:               2
-rofi.separator-style:           none
-rofi.hide-scrollbar:            true

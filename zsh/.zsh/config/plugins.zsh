@@ -59,5 +59,5 @@ source "$ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 		yank-pop
 	)
 
-source "$ZDOTDIR/plugins/base16-shell/base16-shell.plugin.zsh"
+# source "$ZDOTDIR/plugins/base16-shell/base16-shell.plugin.zsh"
 source "$ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"

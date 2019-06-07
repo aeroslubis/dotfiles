@@ -110,16 +110,9 @@ set background=dark
 " set termguicolors
 
 " Monotone theme config
-" let g:monotone_color = [20, 100, 70]      " Sets theme color to bright green
+" let g:monotone_color = [8, 3, 82]      " Sets theme color to bright green
 " let g:monotone_secondary_hue_offset = 200 " Offset secondary colors by 200 degrees
 " let g:monotone_emphasize_comments = 1     " Emphasize comments
-
-" Nord theme config
-" let g:nord_italic = 1
-" let g:nord_underline = 1
-" let g:nord_italic_comments = 1
-" let g:nord_uniform_status_lines = 0
-" let g:nord_comment_brightness = 12
 
 let g:PaperColor_Theme_Options = {
   \   'theme': {

@@ -7,6 +7,7 @@
 #   \________\/\______/
 #
 set $mod Mod4
+set $terminal termite
 set $locker ~/.bin/betterlockscreen
 set $scripts ~/.config/i3/scripts
 
@@ -16,26 +17,28 @@ font pango:Roboto, FontAwesome 10
 floating_modifier $mod
 
 # ---------------------run programs on startup-------------------
-# Set wallpaper screen
-exec_always --no-startup-id $locker -w
-# Launch to bar
-exec --no-startup-id polybar default
 # Lauch window manager compositor
 exec_always --no-startup-id compton
 # auto lock computer if no activity detecter after 10 minutes
 exec_always --no-startup-id xautolock -time 10 -corners -000 -locker "$locker -l dim"
 
-# run once
-exec --no-startup-id st -g 100x20 -n "floating_terminal" -f "Iosevka Term:size=11"
+# ---------------------run program once on startup---------------
+# Launch top bar
+exec --no-startup-id polybar default
+# Set wallpaper screen
+exec --no-startup-id $locker -w
+# Start dunst for notifications
+exec --no-startup-id dunst
 # touchpad configurations
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 279 0
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 287 0.1
 exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 296 0
 # exec --no-startup-id i3-msg 'workspace 3; exec urxvt -e nnn; workspace 1'
+exec --no-startup-id st -g 100x20 -n "floating_terminal" -f "Iosevka Term:size=11"
 
 # #---Basic Bindings---# #
 # Open a terminal
-bindsym $mod+Shift+Return exec --no-startup-id st
+bindsym $mod+Shift+Return exec --no-startup-id $terminal
 
 # Floating terminal
 bindsym $mod+Return [instance="floating_terminal"] scratchpad show

@@ -72,6 +72,7 @@ alias graph-cpu="sar 1 | gawk '{ print 100-int(\$NF); fflush();  }' | ttyplot -s
 alias graph-memory="sar -r 1 | perl -lane 'BEGIN{$|=1} print \"@F[5]\"' | ttyplot -s 100 -t \"memory used %\" -u \"%\""
 alias graph-temp="{ while true; do awk '{ printf(\"%.1f\n\", \$1/1000)  }' /sys/class/thermal/thermal_zone0/temp; sleep 1; done  } | ttyplot -t \"cpu temp\" -u C"
 alias graph-network="sar  -n DEV 1 | gawk '{ if(\$6 ~ /rxkB/) { print iin/1000; print out/1000; iin=0; out=0; fflush();  } iin=iin+\$6; out=out+\$7;  }' | ttyplot -2 -u \"MB/s\""
+alias get-winpos="xdotool getwindowfocus getwindowgeometry"
 
 # if user is not root, pass all these commands via sudo #
 if [ $UID -ne 0 ]; then
@@ -87,3 +88,4 @@ alias 2pdf="libreoffice --headless --invisible --convert-to pdf"
 alias imdb-rename="imdb-rename --data-dir /mnt/drive-d/Data/imdb-rename"
 alias sreload="exec \$SHELL -l"
 alias vbox="vboxmanage"
+alias n="ncmpcpp -q"

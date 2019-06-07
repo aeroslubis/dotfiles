@@ -1,27 +1,35 @@
 #!/bin/bash
-
 # small power menu using rofi, i3, systemd and pm-utils
 # (last 3 dependencies are adjustable below)
 # tostiheld, 2016
-locker="$HOME/.bin/betterlockscreen"
+# edited by aeroslubis 2019
 
+locker="$HOME/.bin/betterlockscreen"
 lock_command="$locker -l dim"
 suspend_command="$locker -s dim"
-reboot_command="systemctl reboot"
-poweroff_command="systemctl poweroff"
 logout_command="i3-msg exit"
-# hibernate_command="systemctl hibernate"
+rofi_command="rofi -width 30 -lines 5"
+options=$'  Lock\n  Suspend\n  Logout\n  Reboot\n  Poweroff' 
 
-# you can customise the rofi command all you want ...
-rofi_command="rofi -width 20"
+reboot_now() {
+    local reply=$(printf " No\\n No\\n No\\n Yes\\n No" | $rofi_command -dmenu -p "Do you want to reboot?" )
+    if [ $reply = "Yes" ]; then
+        systemctl reboot
+    fi
+}
 
-options=$' Lock\n Suspend\n Logout\n Reboot\n Poweroff' 
+poweroff_now() {
+    local reply=$(printf "No\\nNo\\nNo\\nYes\\nNo" | $rofi_command -dmenu -p "Do you want to shutdown?" )
+    if [ $reply = "Yes" ]; then
+        systemctl poweroff
+    fi
+}
 
-response=$(echo "$options" | $rofi_command -dmenu -p "Power Menu" | cut -d' ' -f2)
+response=$(echo "$options" | $rofi_command -dmenu -p "Power Menu" | cut -d' ' -f3)
 case $response in
 	Lock)       $lock_command       ;;
 	Suspend)    $suspend_command    ;;
 	Logout)     $logout_command     ;;
-	Reboot)     $reboot_command     ;;
-	Poweroff)   $poweroff_command   ;;
+	Reboot)     reboot_now          ;;
+	Poweroff)   poweroff_now        ;;
 esac
