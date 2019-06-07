@@ -1,0 +1,4 @@
+termite -t "calwidget"
+sleep 0.3
+i3-msg ["title"="calwidget"] floating enable, resize set 188 175, move position 1171 28
+

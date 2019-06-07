@@ -1,0 +1,14 @@
+#!/bin/bash
+# Script to manimpulate pulse audio sink
+
+# Get sink device id
+current_card=$(pactl list sinks short | grep "USB" | awk '{print $1}')
+[ -z "$current_card" ] && current_card="0"
+
+[ -z "$2" ] && num="5" || num="$2"
+
+case "$1" in
+    u*) pactl set-sink-volume $current_card +$num% ;;
+    d*) pactl set-sink-volume $current_card -$num% ;;
+    m*) pactl set-sink-mute $current_card toggle ;;
+esac
