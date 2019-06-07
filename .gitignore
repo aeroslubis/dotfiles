@@ -1,5 +1,6 @@
 mutt/.mutt/accounts/com.yahoo/cache/*
 mutt/.mutt/accounts/com.gmail/cache/*
+!mutt/.mutt/key.gpg
 newsboat/.newsboat/cache/*
 newsboat/.newsboat/logs/*
 vim/.vim/cache/

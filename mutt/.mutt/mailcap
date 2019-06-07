@@ -2,9 +2,9 @@ text/plain; less %s ;
 #text/html; ~/.mutt/bin/openfile.sh %s ;
 text/html; surf 'file://%s'; nametemplate=%s.html;
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
-image/*; ~/.mutt/bin/muttimage.sh %s; copiousoutput;
+image/*; ~/.mutt/scripts/muttimage.sh %s; copiousoutput;
 video/*; setsid mpv --quiet %s &;
-application/pdf; ~/.mutt/bin/openfile.sh %s;
+application/pdf; ~/.mutt/scripts/openfile.sh %s;
 
 # Microsoft office file docx,xlsx
 application/msword; antiword -w 200 %s | less;
