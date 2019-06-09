@@ -43,6 +43,7 @@ function b() {
         'M' '/mnt/drive-d/Files/Music/'
         'm' '~/Media/'
         'u' '/media/usbdrive/'
+        'r' '~/Repo/dotfiles'
     )
 
     local selected_bookmark
@@ -83,12 +84,12 @@ function b() {
 # lman: Open the manual page for the last command you executed.
 function lman() {
     local cmd
-    
+
     set -- $(fc -nl -1)
     while [ $# -gt 0 -a '(' "sudo" = "$1" -o "-" = "${1:0:1}" ')' ]; do
         shift
     done
-    
+
     cmd="$(basename "$1")"
     man "$cmd" > /dev/null || "$cmd" --help > /dev/null || "$cmd" -h > /dev/null
 }
@@ -113,7 +114,11 @@ function tre() {
 # Create directory with current date as a name
 function mknow() {
     local dirname=$(date +%a_%d%m%Y)
-    [[ -d $dirname ]] && cd $dirname || take $dirname
+    if [ -d $dirname ]; then
+        cd $dirname
+    else
+        take $dirname
+    fi
 }
 
 # Get local ips
@@ -134,7 +139,7 @@ function fmpc() {
 
 # Copy file or directory from clipboard to current directory
 function cpv() {
-    local copy_from=$(xclip -out -selection clipboard)
+    local copy_from=$(cat $XDG_CONFIG_HOME/nnn/.selection)
     if [ -z $copy_from ]; then
         echo "No file(s) to copy!"
         return 1
@@ -232,12 +237,20 @@ youtube-pl() {
 }
 
 # Fuzzy find man pages and open it whith zathura
-fman() {
+manview() {
     man -Tpdf $(man -k . | awk '{print $1}' | uniq | fzy -l 20) | zathura -
 }
 
-deluge-toggle() {
-    if pgrep -x
+# Start stop deluge bittorrent client
+deluged-kill() {
+    if pgrep deluged; then
+        echo -n "Kill deluge daemon? [Y/n] "; read
+        if [[ $REPLY =~ ^[y,Y]$ ]]; then
+            killall deluged
+        fi
+    else
+        deluged
+    fi
 }
 
 # -------------------------Tmux functions------------------------

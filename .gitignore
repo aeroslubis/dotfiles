@@ -24,3 +24,6 @@ config/.config/ncmpcpp/*
 config/.config/stig/cache/*
 config/.config/mpd/*
 !config/.config/mpd/mpd.conf
+config/.config/elinks/*hist
+config/.config/elinks/cookies
+config/.config/elinks/bookmarks

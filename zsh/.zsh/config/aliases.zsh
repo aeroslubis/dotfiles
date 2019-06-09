@@ -2,27 +2,21 @@
 alias ls="ls --color=always --group-directories-first"
 alias ll="ls -lh"
 alias la="ls -a"
-alias lk="ll -S"       # Sorted by size
-alias lm="ll -t"       # Sorted by modified date
-alias lM="ll -tr"      # Sorted by created date
+alias lk="ll -S" # Sorted by size
+alias lm="ll -t" # Sorted by modified date
+alias lM="ll -tr" # Sorted by created date
 alias cp="cp -v"
 alias mv="mv -v"
-alias cpg="cpg -g"     # cp with progress bar
-alias mvg="mvg -g"     # mv with progress bar
+alias cpg="cpg -g" # cp with progress bar
+alias mvg="mvg -g" # mv with progress bar
 alias o='xdg-open'
 alias p="less"
 
-# Command line head / tail shortcuts
-# alias H='| head'
-# alias T='| tail'
-# alias G='| grep -i --color'
-# alias L="| less"
-# alias LL="2>&1 | less"
-# alias CA="2>&1 | cat -A"
-# alias NE="2> /dev/null"
-# alias NUL="> /dev/null 2>&1"
-# alias P="2>&1| pygmentize -l pytb"
-# alias HELP="--help | less"
+# Global Aliases
+alias -g L='| less'
+alias -g G='| grep'
+alias -g NE='2>/dev/null' # No sterr.
+alias -g NO='&>/dev/null' # No stout and sterr (shorthand for 1>/dev/null 2>&1).
 
 alias dirspace='du --max-depth=1 --si'
 alias freespace='df -H /dev/sda4 /dev/sda6'

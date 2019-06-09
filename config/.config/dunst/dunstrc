@@ -32,7 +32,7 @@
 
     # alignment of message text.
     # Possible values are "left", "center" and "right"
-    alignment = center
+    alignment = left
  
     # The frequency with wich text that is longer than the notification
     # window allows bounces back and forth.
@@ -45,11 +45,10 @@
     show_age_threshold = 60
  
     # split notifications into multiple lines if they don't fit into geometry
-    word_wrap = yes
+    word_wrap = no
  
     # ignore newlines '\n' in notifications
     ignore_newline = no
- 
  
     # the geometry of the window
     # geometry [{width}]x{height}][+/-{x}+/-{y}]
@@ -62,8 +61,6 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    #geometry = "300x5-30+20"
-    #geometry = "280x20-10+34"
     geometry = "260x20-10+34"
     # corner_radius = 6
     # The transparency of the window. range: [0; 100]

@@ -10,7 +10,8 @@ foreach piece (
 	widgets.zsh
 	mappings.zsh
 	plugins.zsh
-    profile.zsh
 ) {
 	source $ZDOTDIR/config/$piece
 }
+
+source $ZDOTDIR/.profile

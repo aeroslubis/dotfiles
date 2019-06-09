@@ -10,6 +10,7 @@ suspend_command="$locker -s dim"
 logout_command="i3-msg exit"
 rofi_command="rofi -width 30 -lines 5"
 options=$'  Lock\n  Suspend\n  Logout\n  Reboot\n  Poweroff' 
+options_emoji=$' 🔒 Lock\n 💤 Suspend\n 🚫 Logout\n 🔃 Reboot\n ❌ Poweroff'
 
 reboot_now() {
     local reply=$(printf " No\\n No\\n No\\n Yes\\n No" | $rofi_command -dmenu -p "Do you want to reboot?" )
@@ -19,13 +20,13 @@ reboot_now() {
 }
 
 poweroff_now() {
-    local reply=$(printf "No\\nNo\\nNo\\nYes\\nNo" | $rofi_command -dmenu -p "Do you want to shutdown?" )
+    local reply=$(printf " No\\n No\\n No\\n Yes\\n No" | $rofi_command -dmenu -p "Do you want to shutdown?" )
     if [ $reply = "Yes" ]; then
         systemctl poweroff
     fi
 }
 
-response=$(echo "$options" | $rofi_command -dmenu -p "Power Menu" | cut -d' ' -f3)
+response=$(echo "$options_emoji" | $rofi_command -dmenu -p "Power Menu" | cut -d' ' -f3)
 case $response in
 	Lock)       $lock_command       ;;
 	Suspend)    $suspend_command    ;;

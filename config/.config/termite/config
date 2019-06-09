@@ -19,7 +19,7 @@ scrollback_lines = 15000
 size_hints = false
 search_wrap = true
 urgent_on_bell = true
-# highlight = #30343e
+highlight = #30343e
 
 [colors]
 # Base16 Default Dark
@@ -29,7 +29,7 @@ foreground          = #d8d8d8
 foreground_bold     = #e8e8e8
 cursor              = #e8e8e8
 cursor_foreground   = #181818
-background          = rgba(24, 24, 24)
+background          = #181818
 
 # 16 color space
 

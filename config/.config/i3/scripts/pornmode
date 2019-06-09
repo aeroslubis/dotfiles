@@ -4,9 +4,6 @@
 pulsemixer --mute
 # pause mpd via mpc
 mpc pause
-# pause all mpv
-# for i in $(ls /tmp/mpvsoc*); do
-# 	echo '{ "command": ["set_property", "pause", true] }' | socat - $i;
-# done
-# switch to workspace 0
-i3-msg 0 "exec --no-startup-id $TERMINAL -e htop"
+# kill all mpv
+killall mpv
+i3-msg 8 "exec --no-startup-id termite -e htop"
