@@ -31,6 +31,7 @@ bind-key M \
 # ncmpcpp
 bind-key S \
     new-window -n music 'ncmpcpp' \; \
+    split-window -h 'pulsemixer' \; \
     set-window-option allow-rename off \; \
     rename-window '  music'
 

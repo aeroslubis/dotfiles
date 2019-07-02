@@ -107,6 +107,7 @@ bindsym $mod+Print exec --no-startup-id $scripts/scrot_notify
 bindsym $mod+Shift+Print exec --no-startup-id $scripts/scrot_notify crop
 # Launc networkmanager on rofi
 bindsym $mod+n exec --no-startup-id networkmanager_dmenu
+bindsym $mod+m exec --no-startup-id $scripts/ddspawn nmtui
 # Launch power-menu script
 bindsym $mod+p exec --no-startup-id $scripts/rofi-powermenu
 # Enable disable Touchpad
@@ -185,39 +186,17 @@ mode "Resize" {
 
 bindsym $mod+r mode "Resize"
 
-# move floating windows with keys
-mode "Move" {
-    bindsym $mod+Tab focus right
-
-    bindsym Left  move left
-    bindsym Down  move down
-    bindsym Up    move up
-    bindsym Right move right
-
-    # vim like
-    bindsym h move left
-    bindsym j move down
-    bindsym k move up
-    bindsym l move right
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-bindsym $mod+m mode "Move" focus floating
-
 # Statusline
 bar {
     font pango:Iosevka Term 10
         colors {
-            background $darkblack
-            statusline $darkwhite
-            separator $cyan
-            focused_workspace  $blue $darkblue $darkblack
-            active_workspace   $blue $blue $darkwhite
-            inactive_workspace $darkblack $darkblack $white
-            urgent_workspace   $darkblack $darkblack $white
+            background         $darkblack
+            statusline         $darkwhite
+            separator          $cyan
+            focused_workspace  $blue        $darkblue   $darkblack
+            active_workspace   $blue        $blue       $darkwhite
+            inactive_workspace $darkblack   $darkblack  $white
+            urgent_workspace   $darkblack   $darkblack  $white
         }
     status_command i3blocks
     position top
@@ -252,16 +231,14 @@ client.urgent           $darkred        $darkred    $black      $darkred        
 client.background       $black
 
 # Open applications on specific workspace
-assign [class="Firefox"] 2
-assign [class="pcmanfm-qt"] 4
+assign [window_role="browser"] 2
 assign [class="Deluge"] 4
-assign [class="VirtualBox"] 5
-assign [title="*Arduino*"] 6
-assign [class="Xreader"] 3
+assign [class="VirtualBox Manager"] 5
+assign [class="VirtualBox Machine"] 6
+assign [title="(?i)*Arduino*"] 6
 assign [class="Zathura"] 3
-assign [title="*Running*"] 6
 
-# disable title bars nedder for gaps to work properly
+# disable title bars
 for_window [class="^.*"] border pixel 0
 
 # General dropdown window traits. The order can matter.
@@ -270,36 +247,25 @@ for_window [instance="dropdown_*"] move scratchpad
 for_window [instance="dropdown_*"] sticky enable
 for_window [instance="dropdown_*"] scratchpad show
 for_window [instance="dropdown_tmux"] resize set 700 382
-for_window [instance="dropdown_dropdowncalc"] resize set 800 300
-for_window [instance="dropdown_tmuxd"] border pixel 3
-for_window [instance="dropdown_dropdowncalc"] border pixel 2
+for_window [instance="dropdown_tmux"] border pixel 2
 for_window [instance="dropdown_*"] move position center
 
-for_window [class="sent"] border pixel 0px
-for_window [title="GIMP Startup"] move workspace $ws5
-for_window [class="Gimp"] move workspace $ws5
+for_window [title="GIMP Startup"] move workspace 4
+for_window [class="Gimp"] move workspace 4
 for_window [window_role="GtkFileChooserDialog"] resize shrink height 10 px
-for_window [title="Default - Wine desktop"] floating enable
-
-# Open specific applications in floating mode
+for_window [window_role="GtkFileChooserDialog"] border pixel 2
+for_window [title="Windows Xp*"] move workspace 7
 for_window [class="Lxappearance"] floating enable
-for_window [class="Mousepad"] floating enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="ark"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="Sxiv"] floating enable
-for_window [class="vlc"] floating enable
-for_window [title="File Transfer*"] floating enable
-for_window [title="File Transfer*"] floating enable
-for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
-for_window [window_role="(?i)(?:pop-up|setup)"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="Gucharmap"] floating enable
 for_window [title="*java*"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
-for_window [class="Surf"] floating enable
-for_window [instance="floating_terminal"] floating toggle
-for_window [instance="floating_terminal"] move scratchpad; [instance="floating_terminal"] scratchpad show; move scratchpad
 for_window [instance="tabbed_surf$"] floating enable
 for_window [instance="nnn_sxiv$"] floating enable
+for_window [instance="Java"] move position center
+for_window [window_role="About|page-info"] floating enable
+for_window [instance="Devtools"] floating enable
 # vim:filetype=i3

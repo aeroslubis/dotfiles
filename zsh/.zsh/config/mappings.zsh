@@ -13,6 +13,7 @@ bindkey -M viins ' ' custom-expand-global-alias # Space key to expand global ali
 bindkey -M viins '^ ' autosuggest-accept # Auto suggest accept
 bindkey -M viins '^Y' custom-insert-last-typed-word # Insert last typed word for quick copy-paste.
 bindkey -M viins '^R' custom-fzf-launch-from-history # Select command from history into the command line.
+bindkey -M viins '^T' custom-fzf-select-dir
 
 # Normal Mode
 bindkey -M vicmd 'j' down-line # Override down-line-or-history.

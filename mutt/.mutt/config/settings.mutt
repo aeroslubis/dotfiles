@@ -34,10 +34,3 @@ set sidebar_format = '%B%?F? [%F]?%* %?N?%N/? %?S?%S?'
 # Specifies how to sort messages in the "index" menu.
 set sort = 'threads'
 # set sort_aux = 'reverse-last-date-received'
-
-# Macros for switching accounts
-# macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/accounts/com.yahoo/config.mutt<enter><change-folder>!<enter>'
-# macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/accounts/com.gmail/config.mutt<enter><change-folder>!<enter>'
-
-# Fetch mail shortcut
-# bind index G imap-fetch-mail

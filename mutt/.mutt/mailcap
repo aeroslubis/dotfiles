@@ -1,6 +1,5 @@
 text/plain; less %s ;
-#text/html; ~/.mutt/bin/openfile.sh %s ;
-text/html; surf 'file://%s'; nametemplate=%s.html;
+text/html; ~/.mutt/scripts/openfile.sh %s ;
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
 image/*; ~/.mutt/scripts/muttimage.sh %s; copiousoutput;
 video/*; setsid mpv --quiet %s &;

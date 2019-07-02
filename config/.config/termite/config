@@ -1,15 +1,13 @@
 [options]
-#https://github.com/thestinger/termite/blob/master/config
 allow_bold = true
 audible_bell = false
-browser = firefox
-clickable_url = true
+clickable_url = false
 cursor_blink = system
 cursor_shape = block
 dynamic_title = true
 filter_unmatched_urls = true
 font = Iosevka Term 11
-geometry = 800x600
+geometry = 721x408
 icon_name = terminal
 modify_other_keys = false
 mouse_autohide = true

@@ -11,8 +11,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 # default appclication
 export EDITOR='vim'
 export PAGER='less'
-# export VISUAL='mousepad'
-export BROWSER='firefox'
+export BROWSER='waterfox'
 export FILE='nnn'
 export PLAYER='mpv --no-video'
 export TERMINAL='termite'
@@ -32,18 +31,8 @@ eval $(dircolors --sh "$HOME/.dircolors")
 # fasd
 eval $(fasd --init zsh-hook)
 
-# virtualenv wrapper
-# export WORKON_HOME=~/.virtualenvs
-# source /usr/bin/virtualenvwrapper.sh
-
-# direnv
-# eval "$(direnv hook zsh)"
-
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
-
-# Show dot file on top
-export LC_COLLATE="C"
 
 # nnn configs
 export NNN_USE_EDITOR=1
@@ -57,16 +46,15 @@ export NNN_BMS='d:~/Downloads;'
        NNN_BMS+='u:/media/usbdrive;'
        NNN_BMS+='r:~/Repo;'
        NNN_BMS+='R:~/Repo/dotfiles'
-# export NNN_SCRIPT=~/.config/nnn/scripts
 export NNN_COPIER=~/.config/nnn/copier
 export NNN_NOTE=~/.config/nnn/note
 export NNN_CONTEXT_COLORS="4231"
 export NNN_TMPFILE=/tmp/nnn
 export NNN_RESTRICT_NAV_OPEN=1
 export NNN_RESTRICT_0B=1
-# export NNN_OPS_PROG=1
 export NNN_NO_AUTOSELECT=1
 export NNN_CP_MV_PROG=1
+export NNN_OPENER="$HOME/.bin/sx-open"
 
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 export PYLINTHOME="$XDG_CONFIG_HOME/pylint.d"
@@ -78,43 +66,34 @@ export ELINKS_CONFDIR="$XDG_CONFIG_HOME/elinks"
 
 # fzf
 export FZF_DEFAULT_COMMAND="rg \
-	--files \
-	--no-messages \
-	--no-ignore \
-	--hidden \
-	--follow \
-	--ignore-case \
-	--glob '!{.git,node_modules}/*'"
+    --files \
+    --no-messages \
+    --hidden \
+    --follow \
+    --ignore-case \
+    --glob '!{.git,node_modules}/*'"
 export FZF_DEFAULT_COLORS='--color=dark,fg:7,fg+:7,bg:0,bg+:8,hl:4,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
-	--exact \
-	--no-bold \
-	--inline-info \
-	--height='40%' \
-	--jump-labels='bmvenritusldkfjgh' \
-	--bind='ctrl-f:jump-accept'"
-
-# highlight
-export HIGHLIGHT_OPTIONS="--line-numbers \
-    --line-number-length=2 \
-    --out-format=xterm256 \
-    --base16 \
-    --style=tomorrow-night"
+    --exact \
+    --no-bold \
+    --inline-info \
+    --height='40%' \
+    --jump-labels='bmvenritusldkfjgh' \
+    --bind='ctrl-f:jump-accept'"
 
 # less
 export LESS=" \
-	--ignore-case \
-	--tilde \
-	--chop-long-lines \
-	--status-column \
-	--LONG-PROMPT \
-	--jump-target=10 \
-	--RAW-CONTROL-CHARS \
-	--clear-screen \
-	--silent \
-	--tabs=4 \
-	--shift=5"
-# export LESSOPEN="| highlight $HIGHLIGHT_OPTIONS -- %s 2>/dev/null" # Use `highlight` program to try to highlight opened file according to its extension.
+    --ignore-case \
+    --tilde \
+    --chop-long-lines \
+    --status-column \
+    --LONG-PROMPT \
+    --jump-target=10 \
+    --RAW-CONTROL-CHARS \
+    --clear-screen \
+    --silent \
+    --tabs=4 \
+    --shift=5"
 export LESSOPEN="| bat -n %s 2>/dev/null" # Use `bat` program to syntax-wise highlight files.
 export LESSHISTFILE="$HOME/.config/less/lesshistory" # Command and search history file.
 export LESSKEYRC="$HOME/.config/less/lesskey" # Path of the uncompiled lesskey file.
