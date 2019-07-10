@@ -1,4 +1,4 @@
 source ~/.mutt/config/accounts.mutt
 source ~/.mutt/config/settings.mutt
 source ~/.mutt/config/mappings.mutt
-source ~/.mutt/config/colorscheme.mutt
+source ~/.mutt/config/colors.mutt

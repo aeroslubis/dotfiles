@@ -220,6 +220,16 @@ cmdview() {
     if [[ -f "$file" ]] && $EDITOR "$file"
 }
 
+mac() {
+    [ -z "$1" ] && echo "Provide an interface.."; return 1
+    local mac="$(cat /sys/class/net/$1/address)"
+    if [ -z "$1" ]; then
+        echo "Interface doesn't have a mac address"
+    else
+        echo "$mac"
+    fi
+}
+
 # -------------------------Tmux functions------------------------
 # Open vim on spesific directory
 editor() {

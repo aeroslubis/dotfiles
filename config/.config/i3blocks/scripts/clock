@@ -1,8 +1,7 @@
 #!/bin/sh
 
-date '+%a %l:%M %p'
+echo -n "$(date '+%a %l:%M %p ')"
 
 case $BLOCK_BUTTON in
-    1) pgrep -x dunst >/dev/null && notify-send "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")" ;;
-    3) pgrep -x dunst >/dev/null && notify-send "📅 Time/date module:" "\- Show current time\n\- Left click show calendar" ;;
+    3) echo -n "📅" "$(date '+%d %b %Y')" ;;
 esac

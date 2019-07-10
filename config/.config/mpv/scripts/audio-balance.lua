@@ -167,7 +167,7 @@ end
 mp.register_script_message(mp.get_script_name(), change_balance)
 
 -- shift+9 and shift+0 in Portuguese layout
-mp.add_key_binding(")", 'balance-to-left', function() change_balance(-0.05); end, { repeatable = true })
+mp.add_key_binding("-", 'balance-to-left', function() change_balance(-0.05); end, { repeatable = true })
 mp.add_key_binding("=", 'balance-to-right', function() change_balance(0.05); end, { repeatable = true })
 
 mp.add_key_binding("?", 'balance-reset', function()

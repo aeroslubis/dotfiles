@@ -1,7 +1,7 @@
 # Email password from gpg
 set my_password = `gpg --no-tty --quiet --decrypt ~/.mutt/key.gpg`
 
-set realname = "Aeros Lubis"
+set realname = "Aeros Jarot Lubis"
 set from = "aeros_lubis@yahoo.com"
 set use_from = yes
 set envelope_from = yes

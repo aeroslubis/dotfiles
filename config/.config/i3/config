@@ -18,11 +18,9 @@ floating_modifier $mod
 
 # ---------------------run programs on startup-------------------
 # Lauch window manager compositor
-exec_always --no-startup-id compton
+exec --no-startup-id compton
 # auto lock computer if no activity detecter after 10 minutes
-exec_always --no-startup-id xautolock -time 10 -corners -000 -locker "$locker -l dim"
-
-# ---------------------run program once on startup---------------
+exec --no-startup-id xautolock -time 10 -corners -000 -locker "$locker -l dim"
 # Set wallpaper screen
 exec --no-startup-id $locker -w
 # Start dunst for notifications
@@ -58,8 +56,6 @@ bindsym $mod+s scratchpad show
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -70,6 +66,7 @@ bindsym $mod+a focus mode_toggle
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
@@ -111,7 +108,8 @@ bindsym $mod+m exec --no-startup-id $scripts/ddspawn nmtui
 # Launch power-menu script
 bindsym $mod+p exec --no-startup-id $scripts/rofi-powermenu
 # Enable disable Touchpad
-bindsym $mod+t exec --no-startup-id $scripts/bin/touchpad
+bindsym $mod+t exec --no-startup-id $scripts/touchpad
+bindsym $mod+o exec --no-startup-id $scripts/ddspawn pulsemixer
 
 # start calc with rofi
 bindsym $mod+c exec --no-startup-id rofi -show calc -modi "calc:qalc +u8 -nocurrencies"
@@ -233,9 +231,9 @@ client.background       $black
 # Open applications on specific workspace
 assign [window_role="browser"] 2
 assign [class="Deluge"] 4
-assign [class="VirtualBox Manager"] 5
-assign [class="VirtualBox Machine"] 6
-assign [title="(?i)*Arduino*"] 6
+assign [instance="VirtualBox Manager"] 5
+assign [instance="VirtualBox Machine"] 6
+assign [title="(?i)Arduino*"] 6
 assign [class="Zathura"] 3
 
 # disable title bars

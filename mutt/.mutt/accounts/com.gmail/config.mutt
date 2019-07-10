@@ -12,9 +12,14 @@ set imap_user = "aeros.lubis@gmail.com"
 set imap_pass = $my_password
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
+set ssl_starttls = yes
+set ssl_force_tls = yes
 
 unmailboxes *
 
 # Cache databases. Store messages locally to speed things up.
 set header_cache = '~/.mutt/accounts/com.gmail/cache/headers/'
 set message_cachedir = '~/.mutt/accounts/com.gmail/cache/bodies/'
+set certificate_file = '~/.mutt/accounts/com.gmail/certificates'
+
+
