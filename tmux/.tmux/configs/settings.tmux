@@ -3,7 +3,7 @@ set-option -g prefix C-a
 
 # Default term.
 # set -g default-terminal "screen-256color"
-set -g default-terminal "st-256color"
+set -g default-terminal "xterm-256color"
 
 # Enable vi style key bindings in command mode.
 set-option -g mode-keys vi

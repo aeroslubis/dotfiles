@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# mute pulsemixer
-pulsemixer --mute
-# pause mpd via mpc
-mpc pause
-# kill all mpv
-killall mpv
-i3-msg 8 "exec --no-startup-id termite -e htop"

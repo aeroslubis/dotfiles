@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+[ ! -z "$1" ] && cp "$1" $HOME/.wallpaper.jpg && \
+	notify-send -i "$HOME/.wallpaper.jpg "Wallpaper changed."
+feh --bg-scale $HOME/.wallpaper.jpg 

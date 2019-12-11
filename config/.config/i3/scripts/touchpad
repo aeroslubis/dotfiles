@@ -1,14 +1,15 @@
-#!/bin/bash 
+#!/usr/bin/env bash
 # Simple script to toggle touchpad
 
-STATUS=$(xinput list-props 'SynPS/2 Synaptics TouchPad' | grep '141')
+DEVICE_ID=${1:-141}
+STATUS=$(xinput list-props 'SynPS/2 Synaptics TouchPad' | grep $DEVICE_ID)
 STATUS=${STATUS: -2}
 PHOTO_ICON_PATH=~/Pictures/misc/touchpad_res.png
 
 if [ $STATUS = 1 ]; then
 	notify-send --expire-time=2000 "Touchpad turned off" --icon=$PHOTO_ICON_PATH
-	xinput set-prop 'SynPS/2 Synaptics TouchPad' 141 0
+	xinput set-prop 'SynPS/2 Synaptics TouchPad' $DEVICE_ID 0
 else
 	notify-send --expire-time=2000 "Touchpad turned on" --icon=$PHOTO_ICON_PATH
-	xinput set-prop 'SynPS/2 Synaptics TouchPad' 141 1
+	xinput set-prop 'SynPS/2 Synaptics TouchPad' $DEVICE_ID 1
 fi

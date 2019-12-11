@@ -34,7 +34,7 @@ bind-key -n M-z resize-pane -Z
 unbind-key '"'
 unbind-key %
 bind-key - split-window -v -c '#{pane_current_path}'
-bind-key \ split-window -h -c '#{pane_current_path}'
+bind-key \\ split-window -h -c '#{pane_current_path}'
 bind-key _ split-window -fv -c '#{pane_current_path}' # Full width.
 bind-key | split-window -h -p 34 -c '#{pane_current_path}' # Full height.
 
@@ -49,8 +49,8 @@ bind-key -n M-K resize-pane -U 1
 bind-key -n M-L resize-pane -R 2
 
 # Move panes.
-unbind-key {
-unbind-key }
+# unbind-key {
+# unbind-key }
 bind-key -r H swap-pane -U
 bind-key -r L swap-pane -D
 

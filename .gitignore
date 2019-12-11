@@ -10,6 +10,7 @@ zsh/.zsh/cache/*
 zsh/.zsh/autoload/*
 zsh/.zsh/plugins/*
 zsh/.zsh/themes/*
+zsh/.zsh/.p10k.zsh
 config/.config/mpv/watch_later/
 config/.config/less/lesshistory
 config/.config/less/lesskey.lwc

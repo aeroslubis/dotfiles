@@ -1,5 +1,5 @@
 # Email password from gpg
-set my_password = `gpg --no-tty --quiet --decrypt ~/.mutt/key.gpg`
+# set my_password = `gpg --no-tty --quiet --decrypt ~/.mutt/key.gpg`
 
 set realname = "Aeros Jarot Lubis"
 set from = "aeros_lubis@yahoo.com"
@@ -8,9 +8,9 @@ set envelope_from = yes
 
 set ssl_force_tls = yes
 set smtp_url = "smtps://aeros_lubis@smtp.mail.yahoo.com:465"
-set smtp_pass = $my_password
+# set smtp_pass = $my_password
 set imap_user = "aeros_lubis@yahoo.com"
-set imap_pass = $my_password
+# set imap_pass = $my_password
 set folder = "imaps://imap.mail.yahoo.com:993"
 set spoolfile = "+INBOX"
 set ssl_force_tls = yes

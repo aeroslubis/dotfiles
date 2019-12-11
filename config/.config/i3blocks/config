@@ -4,15 +4,15 @@ markup=pango
 
 [memory]
 interval=30
-label=🧠
+label=🧠 
 
 [cpu]
 interval=15
-label=🔥
+label=🔥 
 
 [disk]
 interval=60
-label=💽
+label=💽 
 
 [internet]
 interval=30
@@ -22,5 +22,5 @@ interval=once
 signal=10
 
 [clock]
-label=🕒
+label=🕒 
 interval=30

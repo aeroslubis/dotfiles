@@ -4,8 +4,7 @@
 # $1 should be drive mountpoint
 # $2 is optional icon, otherwise mountpoint will displayed
 
-printf "HOME:%s " "$(df -h "/dev/sda6" | awk ' /[0-9]/ {print $4}')"
-printf "MEDIA:%s" "$(df -h "/dev/sda4" | awk ' /[0-9]/ {print $4}')"
+printf "ROOT:%s HOME:%s\n" "$(df -h "/dev/sda1" | awk ' /[0-9]/ {print $4}')" "$(df -h "/dev/sda3" | awk ' /[0-9]/ {print $4}')"
 
 case $BLOCK_BUTTON in
     3) pgrep -x dunst >/dev/null && notify-send "💽 Disk space:" "$(df -h --output=target,used,size)" ;;

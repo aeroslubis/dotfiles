@@ -1,10 +1,10 @@
 text/plain          ; less %s ;
 text/html           ; ~/.mutt/scripts/openfile.sh %s ;
-text/html           ; w3m -I %{charset} -T text/html; copiousoutput;
-# image/*             ; ~/.mutt/scripts/muttimage.sh %s; copiousoutput;
-image/*             ; sxiv %s;
-video/*             ; setsid mpv --quiet %s &;
-application/pdf     ; ~/.mutt/scripts/openfile.sh %s;
+#text/html           ; w3m -I %{charset} -T text/html; copiousoutput;
+text/html           ; elinks %s ; copiousoutput;
+image/*             ; ~/.mutt/scripts/openfile.sh %s ;
+video/*             ; ~/.mutt/scripts/openfile.sh %s ;
+application/pdf     ; ~/.mutt/scripts/openfile.sh %s ;
 
 # Microsoft office file docx,xlsx
 application/msword; antiword -w 200 %s | less;

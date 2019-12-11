@@ -4,9 +4,9 @@
 # tostiheld, 2016
 # edited by aeroslubis 2019
 
-locker="$HOME/.bin/betterlockscreen"
-lock_command="$locker -l dim"
-suspend_command="$locker -s dim"
+locker="light-locker-cmd"
+lock_command="$locker --lock"
+suspend_command="systemctl suspend"
 logout_command="i3-msg exit"
 rofi_command="rofi -width 30 -lines 5"
 options=$'  Lock\n  Suspend\n  Logout\n  Reboot\n  Poweroff' 
