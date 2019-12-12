@@ -15,6 +15,7 @@ bindkey -M viins '^ ' autosuggest-accept # Auto suggest accept
 bindkey -M viins '^R' custom-fzf-launch-from-history # Select command from history into the command line.
 bindkey -M viins '.' custom-smartdots # Change directory with dots
 bindkey -M viins '^T' custom-inplaceMkDirs # Create directory inplace
+bindkey -M viins '^U' custom-tmux-scroll-up # Activate tmux-copy mode and scroll up
 
 # Normal Mode
 bindkey -M vicmd 'j' down-line # Override down-line-or-history.
@@ -26,6 +27,7 @@ bindkey -M vicmd 'L' vi-end-of-line # Go end of line.
 bindkey -M vicmd 'cs' change-surround # Change surround operator.
 bindkey -M vicmd 'ds' delete-surround # Delete surround operator.
 bindkey -M vicmd 'ys' add-surround # Add surround operator.
+bindkey -M vicmd '^U' custom-tmux-scroll-up # Activate tmux-copy mode and scroll up
 
 # Visual Mode
 bindkey -M visual 'H' vi-beginning-of-line # Go beginning of line.

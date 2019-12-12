@@ -13,6 +13,7 @@ foreach widget (
     custom-smartdots
     custom-jump-after-first-word
     custom-inplaceMkDirs
+    custom-tmux-scroll-up
 ) {
     eval zle -N $widget
 }
@@ -115,4 +116,17 @@ function custom-inplaceMkDirs () {
         zle -M "$(mkdir -p -v "${PATHTOMKDIR}")"
         zle end-of-line
     fi
+}
+
+# custom-tmux-scroll-up - Acticate tmux copy-mode and scroll up
+function custom-tmux-scroll-up() {
+    if (! (( $+commands[tmux] )) || [[ "$TMUX" == '' ]]) {
+        return 1
+    }
+
+    tmux copy-mode
+
+    if [[ "$KEYS" == ^U ]] {
+        tmux send-keys -X scroll-up
+    }
 }

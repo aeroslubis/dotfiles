@@ -121,16 +121,7 @@ editor() {
     fi
 
     if [[ -n "$TMUX" ]]; then
-	tmux new-window -n 'editor' -c $dir $EDITOR
-    else
-	echo >&2 "No tmux session found."
-    fi
-}
-
-# Open preview window
-peek() {
-    if [[ -n "$TMUX" ]]; then
-        tmux split-window -p 33 $PAGER $@ || exit;
+        tmux new-window -n 'editor' -c $dir $EDITOR
     else
         echo >&2 "No tmux session found."
     fi
@@ -159,26 +150,14 @@ function cdt () {
     builtin pwd
 }
 
-# accessed - List files which have been accessed within the last {\it n} days, {\it n} defaults to 1
-function accessed () {
-    emulate -L zsh
-    print -l -- *(a-${1:-1})
-}
-
-# change - List files which have been changed within the last {\it n} days, {\it n} defaults to 1
-function changed () {
-    emulate -L zsh
-    print -l -- *(c-${1:-1})
-}
-
 # modified - List files which have been modified within the last {\it n} days, {\it n} defaults to 1
 function modified () {
     emulate -L zsh
     print -l -- *(m-${1:-1})
 }
 
-# gg - View git commit
-function dd() {
+# gg - View git commit with fzf
+function gg() {
     local filter
     if [ -n $@ ] && [ -f $@ ]; then
       filter="-- $@"

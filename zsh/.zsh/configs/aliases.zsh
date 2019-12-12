@@ -1,21 +1,21 @@
-# Common aliases
-alias ls="ls -v --classify --color=always --group-directories-first"
-alias ll="ls -lh"
-alias la="ls -a"
-alias lk="ll -S" # Sorted by size
-alias lm="ll -t" # Sorted by modified date
-alias lM="ll -tr" # Sorted by created date
-alias cp="cp -v"
-alias mv="mv -v"
-alias o='xdg-open'
-alias p="less"
-
-# Global Aliases
+# Global aliases
 alias -g L='| less'
 alias -g G='| grep'
 alias -g NE='2>/dev/null'
 alias -g NO='&>/dev/null'
 alias -g NOUT='1>/dev/null 2>/dev/null'
+
+# Common aliases
+alias ls="ls -v --classify --color=always --group-directories-first"
+alias ll="ls -lh"
+alias la="ls -a"
+alias lk="ll -S"   # Sorted by size
+alias lm="ll -t"   # Sorted by modified date
+alias lM="ll -tr"  # Sorted by created date
+alias cp="cp -v"
+alias mv="mv -v"
+alias o='xdg-open'
+alias p="less"
 
 alias dirspace='du --max-depth=1 --si'
 alias feh="feh --scale-down -g 1280x720"
