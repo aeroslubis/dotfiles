@@ -227,6 +227,7 @@ for_window [class="^.*"] border pixel 0
 assign [window_role="browser"] 2
 for_window [instance="Devtools"] floating enable
 for_window [window_role="Organizer"] floating enable
+for_window [class="Netsurf*"] move workspace 2
 
 # Document viewer; workspace 3
 for_window [class="libreoffice*"] move workspace 3
