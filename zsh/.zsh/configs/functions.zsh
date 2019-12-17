@@ -64,14 +64,6 @@ dot() {
     fi
 }
 
-# virtualenvd - Source virtualenv wrapper
-virtualenvd() {
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/bin/virtualenvwrapper.sh
-    echo "workon <env> -> to activate environtment"
-    echo "deactivate -> to deactivate environtment"
-}
-
 # fkill - kill processes - list only the ones you can kill
 fkill() {
     local pid 

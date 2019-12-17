@@ -2,6 +2,12 @@ command=~/.config/i3blocks/scripts/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
+[bandwidth]
+interval=5
+INTERFACE=wlan0
+INLABEL=⬇ 
+OUTLABEL=⬆ 
+
 [memory]
 interval=30
 label=🧠 

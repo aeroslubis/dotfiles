@@ -2,8 +2,8 @@
 set-option -g prefix C-a
 
 # Default term.
-# set -g default-terminal "screen-256color"
 set -g default-terminal "xterm-256color"
+set-option -ga terminal-overrides ",xterm-256color:Tc"
 
 # Enable vi style key bindings in command mode.
 set-option -g mode-keys vi

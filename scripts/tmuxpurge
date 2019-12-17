@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+attached_sessions=$(tmux ls | grep "attached" | awk '{gsub(/:/,"");print $1}')
+
+for session in "$attached_sessions"; do
+    tmux kill-session -t $session
+done

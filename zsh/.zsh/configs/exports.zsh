@@ -9,11 +9,14 @@ export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 
 # PATH
-export PATH=$HOME/.node/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/scripts:$PATH
-# export PATH=$HOME/.bin:$PATH
-# export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
+export PATH=$HOME/.node_modules/bin:$PATH
+
+# TERM
+if [[ $TERM != "xterm-256color" ]]; then
+    TERM="xterm-256color"
+fi
 
 # default appclication
 export EDITOR='vim'
@@ -44,9 +47,10 @@ export NNN_PLUG='i:imgsxiv;'
 export NNN_COPIER=~/.config/nnn/copier
 export NNN_CONTEXT_COLORS="4231"
 
+
+export npm_config_prefix="$HOME/.node_modules"
+export GOPATH="$HOME/.go"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
-export PYLINTHOME="$XDG_CONFIG_HOME/pylint.d"
-export PYLINTRC="$PYLINTHOME/pylintrc"
 export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/bat.conf"
 export UMCONFIG_HOME="$XDG_CONFIG_HOME/um"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep"

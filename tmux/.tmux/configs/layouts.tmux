@@ -22,9 +22,10 @@ bind-key M \
     set-window-option allow-rename off \; \
     rename-window 'mail'
 
-# ncmpcpp
+# music player
 bind-key S \
     new-window -n music 'ncmpcpp -q' \; \
     split-window -h 'pulsemixer' \; \
+    split-window -v 'nnn -d' \; \
     set-window-option allow-rename off \; \
     rename-window 'music'
