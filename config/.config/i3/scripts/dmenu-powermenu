@@ -1,24 +1,37 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-locker="$HOME/.bin/betterlockscreen"
+locker="lightlocker-command"
 
-lock_command="$locker -l dim"
-suspend_command="$locker -s dim"
+lock_command="$locker --lock"
+suspend_command="systemctl suspend"
 reboot_command="systemctl reboot"
 poweroff_command="systemctl poweroff"
 logout_command="i3-msg exit"
-# hibernate_command="systemctl hibernate"
-
-# you can customise the rofi command all you want ...
-rofi_command="rofi -width 20"
 
 options=$' Lock\n Suspend\n Logout\n Reboot\n Poweroff' 
+options_emoji=$' 🔒 Lock\n 💤 Suspend\n 🚫 Logout\n 🔃 Reboot\n ❌ Poweroff'
 
-response=$(echo "$options" | dmenu -fn "Iosevka Term" -b -p "Power Menu" | cut -d' ' -f2)
+reboot_now() {
+    local reply=$(printf " No\\n No\\n No\\n Yes\\n No" \
+        | dmenu -fn "Space Mono" -p "Do you want to reboot?" )
+    if [ $reply = "Yes" ]; then
+        systemctl reboot
+    fi
+}
+
+poweroff_now() {
+    local reply=$(printf " No\\n No\\n No\\n Yes\\n No" \
+        | dmenu -fn "Space Mono" -p "Do you want to shutdown?" )
+    if [ $reply = "Yes" ]; then
+        systemctl poweroff
+    fi
+}
+
+response=$(echo "$options_emoji" | dmenu -fn "Space Mono" -p "POWER" | cut -d' ' -f2)
 case $response in
-	Lock)       $lock_command       ;;
-	Suspend)    $suspend_command    ;;
-	Logout)     $logout_command     ;;
-	Reboot)     $reboot_command     ;;
-	Poweroff)   $poweroff_command   ;;
+    Lock)       $lock_command       ;;
+    Suspend)    $suspend_command    ;;
+    Logout)     $logout_command     ;;
+    Reboot)     reboot_now          ;;
+    Poweroff)   poweroff_now        ;;
 esac
