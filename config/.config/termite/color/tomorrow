@@ -38,25 +38,3 @@ color14 = #8abeb7
 # white
 color7  = #c5c8c6
 color15 = #ffffff
-
-[options]
-allow_bold = true
-audible_bell = false
-clickable_url = false
-cursor_blink = system
-cursor_shape = block
-dynamic_title = true
-filter_unmatched_urls = true
-font = Space Mono 10
-# font = Space Mono for Powerline 10
-geometry = 721x408
-icon_name = terminal
-modify_other_keys = false
-mouse_autohide = true
-scroll_on_output = false
-scroll_on_keystroke = true
-scrollback_lines = 15000
-size_hints = false
-search_wrap = true
-urgent_on_bell = true
-highlight = #30343e
