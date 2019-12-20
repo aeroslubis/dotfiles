@@ -1,43 +1,27 @@
 [colors]
+cursor = #d2d4de
+cursor_foreground = #161821
 
-# special
-foreground        = #c5c8c6
-foreground_bold   = #c5c8c6
-cursor            = #c5c8c6
-cursor_foreground = #1d1f21
-background        = rgba(29, 31, 33, 0.8)
+foreground = #d2d4de
+foreground_bold = #d2d4de
+background = #161821
 
-# black
-color0  = #1d1f21
-color8  = #969896
-
-# red
-color1  = #cc6666
-color9  = #cc6666
-
-# green
-color2  = #b5bd68
-color10 = #b5bd68
-
-# yellow
-color3  = #f0c674
-color11 = #f0c674
-
-# blue
-color4  = #81a2be
-color12 = #81a2be
-
-# magenta
-color5  = #b294bb
-color13 = #b294bb
-
-# cyan
-color6  = #8abeb7
-color14 = #8abeb7
-
-# white
-color7  = #c5c8c6
-color15 = #ffffff
+color0  = #161821
+color1  = #e27878
+color2  = #b4be82
+color3  = #e2a478
+color4  = #84a0c6
+color5  = #a093c7
+color6  = #89b8c2
+color7  = #c6c8d1
+color8  = #6b7089
+color9  = #e98989
+color10 = #c0ca8e
+color11 = #e9b189
+color12 = #91acd1
+color13 = #ada0d3
+color14 = #95c4ce
+color15 = #d2d4de
 
 [options]
 allow_bold = true
@@ -48,7 +32,6 @@ cursor_shape = block
 dynamic_title = true
 filter_unmatched_urls = true
 font = Space Mono 10
-# font = Space Mono for Powerline 10
 geometry = 721x408
 icon_name = terminal
 modify_other_keys = false
