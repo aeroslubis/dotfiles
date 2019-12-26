@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+# Script to pipe stdin to firefox.
+# Mainly used for opening html file with sandboxed firefox
+# From https://unix.stackexchange.com/questions/24931/how-to-make-firefox-read-stdin
+
+import sys, os, time, platform, signal
+from subprocess import Popen
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+sys.stderr = open(os.devnull, 'w')
+
+def timeoutHandler(signum, frame):
+    sys.exit("")
+
+signal.signal(signal.SIGALRM, timeoutHandler)
+signal.alarm(2)
+
+html = sys.stdin.read()
+port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
+
+class Handler(BaseHTTPRequestHandler):
+    def _set_headers(self):
+        self.send_response(200)
+        self.send_header("content-type", "text/html")
+        self.end_headers()
+    def do_GET(self):
+        self._set_headers()
+        self.wfile.write(b = bytes(html, "utf-8"))
+
+platform = platform.system().lower()
+p = Popen(["firefox", "http://localhost:" + str(port) + "/"])
+
+httpd = HTTPServer(("localhost", port), Handler)
+httpd.serve_forever()
