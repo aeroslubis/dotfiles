@@ -1,15 +1,10 @@
-# Email password from gpg
-# set my_password = `gpg --no-tty --quiet --decrypt ~/.mutt/key.gpg`
-
 set realname = "Aeros Jarot Lubis"
 set from = "aeros.lubis@gmail.com"
 set use_from = yes
 set envelope_from = yes
 
 set smtp_url = "smtps://aeros.lubis@gmail.com@smtp.gmail.com:465/"
-# set smtp_pass = $my_password
 set imap_user = "aeros.lubis@gmail.com"
-# set imap_pass = $my_password
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set ssl_starttls = yes
@@ -21,5 +16,3 @@ unmailboxes *
 set header_cache = '~/.mutt/accounts/com.gmail/cache/headers/'
 set message_cachedir = '~/.mutt/accounts/com.gmail/cache/bodies/'
 set certificate_file = '~/.mutt/accounts/com.gmail/certificates'
-
-
