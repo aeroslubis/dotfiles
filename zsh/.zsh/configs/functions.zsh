@@ -21,54 +21,35 @@ function mknow() {
 
 # fmpc - List current mpd playlist with fzf
 function fmpc() {
-    local song_position
-    song_position=$(mpc -f "%position%) %artist% - %title%" playlist | \
-        fzf --query="$1" --reverse --select-1 --exit-0 | \
-        sed -n 's/^\([0-9]*\)).*/\1/p'
-    ) || return 1
-    [ -n "$song_position" ] && mpc -q play $song_position
-}
-
-# i3open - Open application on spesific i3 workspace
-i3open() {
-    while getopts "w:" opt; do
-        case ${opt} in
-            w ) workspace="workspace $OPTARG;" ;;
-            h ) echo "open -w [workspace] [command]"; exit 1 ;;
-            * ) exit 1 ;;
-        esac
-    done
-
-    [ $# -eq 0 ] && exit 1
-
-    shift $(($OPTIND -1))
-    i3-msg $workspace "exec --no-startup-id $@" &> /dev/null
+    local songs="$(mpc -f "%position%) %artist% - %title%" playlist \
+                   | fzf --query="$1" --reverse --select-1 --exit-0 \
+                   | sed -n 's/^\([0-9]*\)).*/\1/p')"
+    [[ -n "$songs" ]] && mpc -q play $songs
 }
 
 # dot - View or edit configuration file
-dot() {
+function dot() {
     local dotfile file key
-    IFS=$'\n'
-    dotfile=("$(fd . $HOME/Repository/mydotfiles --hidden --type file --exclude '.git/*' \
-        --exclude 'README.md' --exclude '.gitignore' | \
-        fzf --exit-0 --expect=ctrl-o --preview=' \
-            bat {} || cat {} 2>/dev/null;')")
-
+    dotfile="$(git -C $HOME/Repository/mydotfiles ls-files \
+               | fzf --exit-0 --expect=ctrl-o --preview=' \
+                 bat $HOME/Repository/mydotfiles/{} 2>/dev/null;')"
     key=$(head -1 <<< "$dotfile")
-    file=$(head -2 <<< "$dotfile" | tail -1)
-    if [ -n "$file" ]; then
-        case "$key" in
-            ctrl-o) $EDITOR "$file" ;;
-            *) less "$file" ;;
-        esac
-    fi
+    file="$HOME/Repository/mydotfiles/$(head -2 <<< "$dotfile" | tail -1)"
+
+    [[ ! -n $file ]] && return
+    case "$key" in
+        ctrl-o) $EDITOR "$file" ;;
+             *) $PAGER "$file"  ;;
+    esac
 }
 
 # fkill - kill processes - list only the ones you can kill
-fkill() {
+function fkill() {
     local pid 
-    pid=$(ps -u $UID -o pid,uname,pcpu,pmem,bsdtime,comm --sort -pcpu \
-            | sed 1d | fzf -m | awk '{print $1}')
+    pid="$(ps -u $UID -o pid,uname,pcpu,pmem,bsdtime,comm --sort -pcpu \
+          | sed 1d \
+          | fzf -m \
+          | awk '{print $1}')"
 
     if [ "x$pid" != "x" ]
     then
@@ -77,8 +58,7 @@ fkill() {
 }
 
 # n - nnn cd on quit
-n ()
-{
+function n() {
     # Block nesting of nnn in subshells
     if [ "${NNNLVL:-0}" -ge 1 ]; then
         echo "nnn is already running"
@@ -87,7 +67,7 @@ n ()
 
     export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
 
-    nnn -d -o -E "$@"
+    nnn -dEoQx "$@"
 
     if [ -f "$NNN_TMPFILE" ]; then
             . "$NNN_TMPFILE"
@@ -96,56 +76,25 @@ n ()
 }
 
 # tm - Create new tmux session, or swhitch to existing one
-tm() {
-  [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
-  if [ $1 ]; then
-    tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -n 'main' -s $1 && tmux $change -t "$1"); return
-  fi
-  session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
+function tm() {
+    [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
+    if [ $1 ]; then
+        tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -n 'main' -s $1 && \
+            tmux $change -t "$1"); return
+    fi
+    session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) && \
+        tmux $change -t "$session" || echo "No sessions found."
 }
 
-# Open vim on spesific directory
-editor() {
-    if [[ $# -eq 0 ]]; then
-        local dir=$(pwd)
-    else
-        local dir=$1
-    fi
+# editor - Open vim on spesific directory
+function editor() {
+    [[ $# -eq 0 ]] && dir="$(pwd)" || dir="$1"
 
     if [[ -n "$TMUX" ]]; then
         tmux new-window -n 'editor' -c $dir $EDITOR
     else
         echo >&2 "No tmux session found."
     fi
-}
-
-# cl - cd to directory and list files
-function cl () {
-    emulate -L zsh
-    cd $1 && ls -a
-}
-
-# smart cd function, allows switching to /etc when running 'cd /etc/fstab'
-function cd () {
-    if (( ${#argv} == 1 )) && [[ -f ${1} ]]; then
-        [[ ! -e ${1:h} ]] && return 1
-        print "Correcting ${1} to ${1:h}"
-        builtin cd ${1:h}
-    else
-        builtin cd "$@"
-    fi
-}
-
-# cdt - Create temporary directory and \kbd{cd} to it
-function cdt () {
-    builtin cd "$(mktemp -d)"
-    builtin pwd
-}
-
-# modified - List files which have been modified within the last {\it n} days, {\it n} defaults to 1
-function modified () {
-    emulate -L zsh
-    print -l -- *(m-${1:-1})
 }
 
 # gg - View git commit with fzf
@@ -167,4 +116,36 @@ function gg() {
                       FZF-EOF" \
             --preview-window=right:60% \
             --height 80%
+}
+
+# fclone - copy rclone remote file to current directory
+function fclone() {
+    local filename="$(rclone ls --max-depth 1 gdrive:/ | fzf | cut -d' ' -f2-)"
+    if [[ -n $filename ]]; then
+        echo "Downloading $filename"
+        rclone copy --progress "gdrive:/$filename" "$(pwd)"
+    fi
+}
+
+# tarpv - create tar archive with progress bar
+function tarpv() {
+    [[ ${#argv} < 2 ]] && return
+    local dirsize=$(du -sb "$1" | awk '{print $1}')
+    tar cf - "$1" -P | pv -s $dirsize > "$2"
+}
+
+# ve - select python virtualenv environtment
+function ve() {
+    local ve="$(find $HOME/.virtualenv -maxdepth 1 -mindepth 1 -type d | fzf)"
+    [[ ! -z $ve ]] && source $ve/bin/activate
+}
+
+# passcp - copy password from password-store
+function passcp() {
+    local pass_file="$(find $HOME/.password-store -type f \
+                       | grep -E '\.gpg$' \
+                       | sed -e "s/.*password-store\///" \
+                       | sed -e "s/\.gpg$//" \
+                       | fzf)"
+    pass -c $pass_file
 }
