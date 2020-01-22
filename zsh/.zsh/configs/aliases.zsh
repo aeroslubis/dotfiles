@@ -35,8 +35,9 @@ alias logs="tail -n 50 -f /var/log/Xorg.0.log"
 alias help="tldr"
 alias 2pdf="libreoffice --headless --invisible --convert-to pdf"
 alias imdb-rename="imdb-rename --data-dir $HOME/.cache/imdb-rename"
-alias music="ncmpcpp -q"
+alias m="ncmpcpp -q"
 alias elinks="elinks -config-dir $XDG_CONFIG_HOME/elinks/"
+alias gpg-forget="gpg-connect-agent reloadagent /bye"
 
 # if user is not root, pass all these commands via sudo #
 if [ $UID -ne 0 ]; then

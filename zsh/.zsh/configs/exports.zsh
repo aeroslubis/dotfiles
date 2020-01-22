@@ -1,4 +1,3 @@
-# -*- mode: sh; -*-
 # Locale
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
@@ -25,36 +24,36 @@ export BROWSER='firefox'
 export FILE='nnn'
 export PLAYER='mpv --no-video'
 export TERMINAL='termite'
-export VISUAL='dvim'
+# export VISUAL='dvim'
 
 # dircolors
 eval $(dircolors --sh "$HOME/.dircolors")
+
+export npm_config_prefix="$HOME/.node_modules"
+export GOPATH="$HOME/.go"
+export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/bat.conf"
+export UMCONFIG_HOME="$XDG_CONFIG_HOME/um"
+export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep"
+export ELINKS_CONFDIR="$XDG_CONFIG_HOME/elinks"
 
 # nnn configs
 export NNN_USE_EDITOR=1
 export NNN_BMS='d:~/Downloads;'
        NNN_BMS+='s:~/Sandbox;'
        NNN_BMS+='F:~/Files;'
-       NNN_BMS+='T:~Downloads/Torrents;'
+       NNN_BMS+='T:~/Downloads/Torrents;'
        NNN_BMS+='M:~/Music;'
        NNN_BMS+='p:~/Pictures;'
-       NNN_BMS+='u:/mnt;'
+       NNN_BMS+='u:/run/media;'
        NNN_BMS+='U:/.mtp;'
        NNN_BMS+='r:~/Repository;'
        NNN_BMS+='c:~/.config;'
 export NNN_PLUG='i:imgsxiv;'
        NNN_PLUG+='m:boom;'
-export NNN_COPIER=~/.config/nnn/copier
+export NNN_COPIER="$XDG_CONFIG_HOME/nnn/copier"
 export NNN_CONTEXT_COLORS="4231"
-
-
-export npm_config_prefix="$HOME/.node_modules"
-export GOPATH="$HOME/.go"
-export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
-export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/bat.conf"
-export UMCONFIG_HOME="$XDG_CONFIG_HOME/um"
-export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep"
-export ELINKS_CONFDIR="$XDG_CONFIG_HOME/elinks"
+export NNN_OPENER="$XDG_CONFIG_HOME/nnn/plugins/nuke"
+export NNN_ARCHIVE="\\.(7z|bz2|gz|tar|tgz|zip|rar)$"
 
 # fzf
 export FZF_DEFAULT_COMMAND="rg \
