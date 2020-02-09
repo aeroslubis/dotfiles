@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# Script to temporarily change default dns server to login to captiv portal
+
+# Exit script as soon as a command fails.
+set -o errexit
+
+RESOLV_CONF=/etc/resolv.conf
+DNSCRYPT_RESOLV=/etc/resolv.conf.dnscrypt
+WIFIID_RESOLV=/etc/resolv.conf.wifiid
+
+if ! [ $(id -u) = 0 ]; then
+    echo "The script need to be run as root." >&2
+    exit 1
+fi
+
+chattr -i $RESOLV_CONF
+rm -f $RESOLV_CONF
+
+cat <<EOF > $RESOLV_CONF
+nameserver 118.98.44.100
+nameserver 118.98.44.10
+EOF
+
+echo "Current nameserver:"
+cat $RESOLV_CONF
+echo "\nWait for the connection"
+echo "Then, login to the captive portal"
+
+while true
+do
+    read -p "Did you login?(Y/N) " answer
+    case $answer in
+        [yY]* ) rm -f $RESOLV_CONF
+                cp $DNSCRYPT_RESOLV $RESOLV_CONF
+                chattr +i $RESOLV_CONF
+                echo "\nFinal nameservers:"
+                cat $RESOLV_CONF
+                echo "\nRestarting dnscrypt-proxy..."
+                systemctl restart dnscrypt-proxy
+                echo "Done"
+                break;;
+
+        [nN]* ) exit;;
+
+        * )     echo "Enter Y or N, please.";;
+    esac
+done
