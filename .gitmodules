@@ -10,3 +10,6 @@
 [submodule "vim/.vim/pack/plugins/start/lightline"]
 	path = vim/.vim/pack/plugins/start/lightline
 	url = https://github.com/itchyny/lightline.vim
+[submodule "zsh/.zsh/plugins/forgit"]
+	path = zsh/.zsh/plugins/forgit
+	url = https://github.com/wfxr/forgit.git

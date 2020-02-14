@@ -14,6 +14,5 @@ set ssl_force_tls = yes
 unmailboxes *
 
 # Cache databases. Store messages locally to speed things up.
-set header_cache = '~/.mutt/accounts/com.gmail/cache/headers/'
-set message_cachedir = '~/.mutt/accounts/com.gmail/cache/bodies/'
-set certificate_file = '~/.mutt/accounts/com.gmail/certificates'
+set header_cache = '~/.mutt/accounts/gmail/cache/headers/'
+set message_cachedir = '~/.mutt/accounts/gmail/cache/bodies/'

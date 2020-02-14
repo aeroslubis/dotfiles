@@ -14,7 +14,5 @@ set ssl_force_tls = yes
 unmailboxes *
 
 # Cache databases. Store messages locally to speed things up.
-set header_cache = '~/.mutt/accounts/com.yahoo/cache/headers/'
-set message_cachedir = '~/.mutt/accounts/com.yahoo/cache/bodies/'
-
-
+set header_cache = '~/.mutt/accounts/yahoo/cache/headers/'
+set message_cachedir = '~/.mutt/accounts/yahoo/cache/bodies/'
