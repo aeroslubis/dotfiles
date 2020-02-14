@@ -26,21 +26,18 @@ export PLAYER='mpv --no-video'
 export TERMINAL='termite'
 # export VISUAL='dvim'
 
-# dircolors
-eval $(dircolors --sh "$HOME/.dircolors")
-
 export npm_config_prefix="$HOME/.node_modules"
 export GOPATH="$HOME/.go"
 export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/bat.conf"
 export UMCONFIG_HOME="$XDG_CONFIG_HOME/um"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep"
 export ELINKS_CONFDIR="$XDG_CONFIG_HOME/elinks"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 
 # nnn configs
-export NNN_USE_EDITOR=1
 export NNN_BMS='d:~/Downloads;'
        NNN_BMS+='s:~/Sandbox;'
-       NNN_BMS+='F:~/Files;'
+       NNN_BMS+='v:~/Videos;'
        NNN_BMS+='T:~/Downloads/Torrents;'
        NNN_BMS+='M:~/Music;'
        NNN_BMS+='p:~/Pictures;'
@@ -51,8 +48,8 @@ export NNN_BMS='d:~/Downloads;'
 export NNN_PLUG='i:imgsxiv;'
        NNN_PLUG+='m:boom;'
 export NNN_COPIER="$XDG_CONFIG_HOME/nnn/copier"
-export NNN_CONTEXT_COLORS="4231"
-export NNN_OPENER="$XDG_CONFIG_HOME/nnn/plugins/nuke"
+export NNN_COLORS="4231"
+export NNN_OPENER="xdg-open"
 export NNN_ARCHIVE="\\.(7z|bz2|gz|tar|tgz|zip|rar)$"
 
 # fzf
@@ -63,14 +60,15 @@ export FZF_DEFAULT_COMMAND="rg \
     --follow \
     --ignore-case \
     --glob '!{.git,node_modules}/*'"
-export FZF_DEFAULT_COLORS='--color=dark,fg:7,fg+:7,bg:0,bg+:8,hl:4,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
+export FZF_DEFAULT_COLORS='--color=dark,fg:-1,bg:-1,hl:4,fg+:7,bg+:8,gutter:-1,hl+:4,info:8,border:8,prompt:4,pointer:3,marker:3,spinner:8,header:6'
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS \
     --exact \
-    --no-bold \
-    --inline-info \
+    --no-multi \
+    --no-mouse \
     --height='40%' \
-    --jump-labels='bmvenritusldkfjgh' \
-    --bind='ctrl-f:jump-accept'"
+    --layout='reverse' \
+    --inline-info \
+    --no-bold"
 
 # less
 export LESS=" \
@@ -101,3 +99,6 @@ export LESS_TERMCAP_ZN=$(tput ssubm) # Enter subscript mode.
 export LESS_TERMCAP_ZV=$(tput rsubm) # End subscript mode.
 export LESS_TERMCAP_ZO=$(tput ssupm) # Enter superscript mode.
 export LESS_TERMCAP_ZW=$(tput rsupm) # End superscript mode.
+
+# dircolors
+eval $(dircolors --sh "$HOME/.dircolors")

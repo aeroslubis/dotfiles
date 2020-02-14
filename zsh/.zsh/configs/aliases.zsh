@@ -61,11 +61,4 @@ for c in $sudo_commands; do; alias sc-$c="sudo systemctl $c"; done
 for c in $user_commands; do; alias scu-$c="systemctl --user $c"; done
 for c in $sudo_commands; do; alias scu-$c="systemctl --user $c"; done
 
-# oh-my-zsh git plugins with a litle change
-alias ga='git add --verbose'
-alias gaa='git add --all --verbose'
-alias gb='git branch'
-alias gba='git branch -a'
-alias gc='git commit -v'
-alias gd='git diff'
 alias gs='git status'
