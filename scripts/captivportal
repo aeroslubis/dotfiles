@@ -23,7 +23,7 @@ EOF
 
 echo "Current nameserver:"
 cat $RESOLV_CONF
-echo "\nWait for the connection"
+echo -e "\nWait for the connection"
 echo "Then, login to the captive portal"
 
 while true
@@ -33,9 +33,9 @@ do
         [yY]* ) rm -f $RESOLV_CONF
                 cp $DNSCRYPT_RESOLV $RESOLV_CONF
                 chattr +i $RESOLV_CONF
-                echo "\nFinal nameservers:"
+                echo -e "\nFinal nameservers:"
                 cat $RESOLV_CONF
-                echo "\nRestarting dnscrypt-proxy..."
+                echo -e "\nRestarting dnscrypt-proxy..."
                 systemctl restart dnscrypt-proxy
                 echo "Done"
                 break;;
