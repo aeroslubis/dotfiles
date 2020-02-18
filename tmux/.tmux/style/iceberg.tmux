@@ -28,7 +28,7 @@ set -g message-command-style "fg=#c6c8d1,bg=#2e3244"
 # Status
 set -g status-right-length "100"
 set -g status-left-length "100"
-set -g status-left "#[fg=#c6c8d1,bg=#454b68,bold] #(whoami) #[fg=#454b68,bg=#1e2132,nobold,nounderscore,noitalics]"
+set -g status-left "#[fg=#c6c8d1,bg=#454b68,bold] #(whoami) #[fg=#454b68,bg=#2e3244,nobold,nounderscore,noitalics]#[fg=#c6c8d1,bg=#2e3244] #S #[fg=#2e3244,bg=#1e2132,nobold,nounderscore,noitalics]#[fg=#c6c8d1,bg=#1e2132] #[fg=#1e2132,bg=#1e2132,nobold,nounderscore,noitalics]"
 set -g status-right "#{prefix_highlight}#[fg=#2e3244,bg=#1e2132,nobold,nounderscore,noitalics]#[fg=#c6c8d1,bg=#2e3244] #(hostname -i | awk {'print $1'}) #[fg=#454b68,bg=#2e3244,nobold,nounderscore,noitalics]#[fg=#c6c8d1,bg=#454b68,bold] #H "
 
 # Windows

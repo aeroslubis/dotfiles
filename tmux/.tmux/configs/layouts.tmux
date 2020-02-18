@@ -12,7 +12,7 @@ bind-key H \
 
 # nnn
 bind-key N \
-    new-window -n file 'nnn -dEoQx' \; \
+    new-window -n file 'nnn -dEoQxe' \; \
     set-window-option allow-rename off \; \
     rename-window 'file'
 
