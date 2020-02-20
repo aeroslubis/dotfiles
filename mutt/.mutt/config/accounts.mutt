@@ -1,6 +1,6 @@
 # Folder hooks
-folder-hook 'config.mutt' 'source ~/.mutt/accounts/com.gmail/config.mutt'
-folder-hook 'config.mutt' 'source ~/.mutt/accounts/com.yahoo/config.mutt'
+folder-hook 'config.mutt' 'source ~/.mutt/accounts/gmail/config.mutt'
+folder-hook 'config.mutt' 'source ~/.mutt/accounts/yahoo/config.mutt'
 
 # Default account
-source ~/.mutt/accounts/com.gmail/config.mutt
+source ~/.mutt/accounts/gmail/config.mutt

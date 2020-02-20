@@ -11,8 +11,16 @@ set spoolfile = "+INBOX"
 set ssl_starttls = yes
 set ssl_force_tls = yes
 
-unmailboxes *
-
 # Cache databases. Store messages locally to speed things up.
 set header_cache = '~/.mutt/accounts/gmail/cache/headers/'
 set message_cachedir = '~/.mutt/accounts/gmail/cache/bodies/'
+
+set status_format = "  gmail  %f[%r] %>  %?M?%M/?%m messages, %?n?%n new, ?%?d?%d deleted, ?%?F?%F important, ?%?t?%t selected, ?%?p?%p drafts, ?%l "
+
+unmailboxes *
+mailboxes \
+	"+Inbox" \
+	"+Sent" \
+	"+Drafts" \
+	"+Spam" \
+	"+Trash"

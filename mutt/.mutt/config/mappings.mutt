@@ -18,9 +18,9 @@ bind index,pager \Cl sidebar-open
 
 macro index,pager S <sync-mailbox>
 
-#Switch mail account
-macro index,pager \Cg '<sync-mailbox><enter-command>source ~/.mutt/accounts/com.gmail/config.mutt<enter><change-folder>!<enter>'
-macro index,pager \Cy '<sync-mailbox><enter-command>source ~/.mutt/accounts/com.yahoo/config.mutt<enter><change-folder>!<enter>'
+# Switch mail account
+macro index,pager \Cg '<sync-mailbox><enter-command>source ~/.mutt/accounts/gmail/config.mutt<enter><change-folder>!<enter>'
+macro index,pager \Cy '<sync-mailbox><enter-command>source ~/.mutt/accounts/yahoo/config.mutt<enter><change-folder>!<enter>'
 
 # View attachments properly.
 bind attach <return> view-mailcap

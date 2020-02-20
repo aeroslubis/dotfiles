@@ -11,6 +11,8 @@ set folder = "imaps://imap.mail.yahoo.com:993"
 set spoolfile = "+INBOX"
 set ssl_force_tls = yes
 
+set status_format = "  yahoo  %f[%r] %>  %?M?%M/?%m messages, %?n?%n new, ?%?d?%d deleted, ?%?F?%F important, ?%?t?%t selected, ?%?p?%p drafts, ?%l "
+
 unmailboxes *
 
 # Cache databases. Store messages locally to speed things up.
