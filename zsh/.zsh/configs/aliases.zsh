@@ -16,6 +16,7 @@ alias cp="cp -v"
 alias mv="mv -v"
 alias o='xdg-open'
 alias p="less"
+alias df='df --all --si --print-type'
 
 alias dirspace='du --max-depth=1 --si'
 alias feh="feh --scale-down -g 1280x720"
@@ -38,6 +39,7 @@ alias imdb-rename="imdb-rename --data-dir $HOME/.cache/imdb-rename"
 alias m="ncmpcpp -q"
 alias elinks="elinks -config-dir $XDG_CONFIG_HOME/elinks/"
 alias gpg-forget="gpg-connect-agent reloadagent /bye"
+alias get="curl -LO"
 
 # if user is not root, pass all these commands via sudo #
 if [ $UID -ne 0 ]; then

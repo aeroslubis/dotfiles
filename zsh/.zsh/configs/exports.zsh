@@ -11,6 +11,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/scripts:$PATH
 export PATH=$HOME/.node_modules/bin:$PATH
+# export PATH=$(ruby -e 'puts Gem.user_dir')/bin:$PATH
 
 # TERM
 if [[ $TERM != "xterm-256color" ]]; then
@@ -45,11 +46,13 @@ export NNN_BMS='d:~/Downloads;'
        NNN_BMS+='U:/.mtp;'
        NNN_BMS+='r:~/Repository;'
        NNN_BMS+='c:~/.config;'
-export NNN_PLUG='i:imgsxiv;'
+export NNN_PLUG='i:imgview;'
        NNN_PLUG+='m:boom;'
+       NNN_PLUG+='p:preview-tui;'
 export NNN_COPIER="$XDG_CONFIG_HOME/nnn/copier"
 export NNN_COLORS="4231"
-export NNN_OPENER="xdg-open"
+# export NNN_OPENER="xdg-open"
+export NNN_OPENER="$XDG_CONFIG_HOME/nnn/plugins/nuke"
 export NNN_ARCHIVE="\\.(7z|bz2|gz|tar|tgz|zip|rar)$"
 
 # fzf
@@ -102,3 +105,6 @@ export LESS_TERMCAP_ZW=$(tput rsupm) # End superscript mode.
 
 # dircolors
 eval $(dircolors --sh "$HOME/.dircolors")
+
+BASE16_SHELL=$XDG_CONFIG_HOME/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
