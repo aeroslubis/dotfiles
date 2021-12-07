@@ -3,9 +3,9 @@
 locker="lightlocker-command"
 
 lock_command="$locker --lock"
-suspend_command="systemctl suspend"
-reboot_command="systemctl reboot"
-poweroff_command="systemctl poweroff"
+suspend_command="suspend"
+reboot_command="reboot"
+poweroff_command="poweroff"
 logout_command="i3-msg exit"
 
 options=$' Lock\n Suspend\n Logout\n Reboot\n Poweroff' 

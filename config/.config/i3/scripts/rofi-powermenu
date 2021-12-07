@@ -6,7 +6,7 @@
 
 locker="light-locker-command"
 lock_command="$locker --lock"
-suspend_command="systemctl suspend"
+suspend_command="suspend"
 logout_command="i3-msg exit"
 rofi_command="rofi -width 30 -lines 5"
 options=$'  Lock\n  Suspend\n  Logout\n  Reboot\n  Poweroff' 
@@ -15,14 +15,14 @@ options_emoji=$' 🔒 Lock\n 💤 Suspend\n 🚫 Logout\n 🔃 Reboot\n ❌ Powe
 reboot_now() {
     local reply=$(printf " No\\n No\\n No\\n Yes\\n No" | $rofi_command -dmenu -p "Do you want to reboot?" )
     if [ $reply = "Yes" ]; then
-        systemctl reboot
+        reboot
     fi
 }
 
 poweroff_now() {
     local reply=$(printf " No\\n No\\n No\\n Yes\\n No" | $rofi_command -dmenu -p "Do you want to shutdown?" )
     if [ $reply = "Yes" ]; then
-        systemctl poweroff
+        poweroff
     fi
 }
 
