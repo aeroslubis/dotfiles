@@ -71,7 +71,7 @@ if executable('tmux') && $TMUX !=# ''
 endif
 set termguicolors
 set background=dark
-colorscheme iceberg
+colorscheme afterglow
 
 " Enable statusline
 set laststatus=2
