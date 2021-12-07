@@ -2,8 +2,10 @@
 set-option -g prefix C-a
 
 # Default term.
-set -g default-terminal "xterm-256color"
-set-option -ga terminal-overrides ",xterm-256color:Tc"
+# set -g default-terminal "xterm-256color"
+# set-option -ga terminal-overrides ",xterm-256color:Tc"
+set -g default-terminal "tmux-256color"
+# set-option -ga terminal-overrides ",tmux-256color:Tc"
 
 # Enable vi style key bindings in command mode.
 set-option -g mode-keys vi
@@ -40,10 +42,3 @@ set-option -g automatic-rename on
 
 # Terminal overrides.
 # set-option -g -a terminal-overrides ',xterm-256color:Tc' # True color support.
-
-# direnv
-# set-option -g update-environment "DIRENV_DIFF DIRENV_DIR DIRENV_WATCHES"
-# set-environment -gu DIRENV_DIFF
-# set-environment -gu DIRENV_DIR
-# set-environment -gu DIRENV_WATCHES
-# set-environment -gu DIRENV_LAYOUT
