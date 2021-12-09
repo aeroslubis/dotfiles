@@ -26,3 +26,5 @@ config/.config/mpd/*
 config/.config/elinks/*hist
 config/.config/elinks/cookies
 config/.config/elinks/bookmarks
+config/.config/aria2/session.lock
+config/.config/systemd/user/default.target.wants
