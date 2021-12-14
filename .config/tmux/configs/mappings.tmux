@@ -6,8 +6,8 @@ bind-key C-a send-prefix
 
 # Reload configuration.
 bind-key r \
-	source-file ~/.tmux.conf \; \
-	display-message ' (!) ~/.tmux.conf reloaded.'
+	source-file ~/.config/tmux/tmux.conf \; \
+	display-message ' (!) ~/.config/tmux/tmux.conf reloaded.'
 
 # Switch panes.
 bind-key -n M-h select-pane -L

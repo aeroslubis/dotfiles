@@ -18,7 +18,7 @@ set-option -g mouse on
 set-option -g escape-time 0
 
 # Keep commands history and set its limit.
-set-option -g history-file ~/.tmux/cache/history
+set-option -g history-file /tmp/tmux-history
 set-option -g history-limit 10000
 
 # Start window numbers at 1 to match keyboard order with tmux window order.
