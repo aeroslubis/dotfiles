@@ -13,6 +13,6 @@
 [submodule "zsh/.zsh/plugins/forgit"]
 	path = zsh/.zsh/plugins/forgit
 	url = https://github.com/wfxr/forgit.git
-[submodule "tmux/.tmux/plugins/tmux-current-pane-hostname"]
-	path = tmux/.tmux/plugins/tmux-current-pane-hostname
-	url = https://github.com/soyuka/tmux-current-pane-hostname.git
+[submodule ".config/tmux/plugins/tmux-current-pane-hostname"]
+	path = .config/tmux/plugins/tmux-current-pane-hostname
+	url = https://github.com/soyuka/tmux-current-pane-hostname

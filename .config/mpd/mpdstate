@@ -1,0 +1,84 @@
+sw_volume: 100
+audio_device_state:1:pulse audio
+audio_device_state:1:my_fifo
+state: stop
+current: 31
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Various Artists/70s Rock/58 Sweet Home Alabama.mp3
+1:Various Artists/70s Rock/29 Transmission.mp3
+2:Various Artists/70s Rock/44 Do You Wanna Dance (2017 Remaster).mp3
+3:Various Artists/70s Rock/51 Cry Baby.mp3
+4:Various Artists/70s Rock/16 Baba O'Riley.mp3
+5:Various Artists/70s Rock/36 Walk This Way.mp3
+6:Various Artists/70s Rock/68 Paranoid.mp3
+7:Various Artists/70s Rock/09 Barracuda.mp3
+8:Various Artists/70s Rock/33 Life on Mars (2015 Remaster).mp3
+9:Various Artists/70s Rock/50 Ever Fallen in Love (With Someone You Shouldn't've) (1996 Remastered Version).mp3
+10:Various Artists/70s Rock/15 Give A Little Bit.mp3
+11:Various Artists/70s Rock/57 Rocket Man (I Think It's Going To Be A Long Long Time).mp3
+12:Various Artists/70s Rock/07 On The Road Again (Remastered).mp3
+13:Various Artists/70s Rock/38 Refugee.mp3
+14:Various Artists/70s Rock/53 Rock & Roll (2015 Remastered Full Length Version).mp3
+15:Various Artists/70s Rock/32 Walk on the Wild Side (Remastered).mp3
+16:Various Artists/70s Rock/48 Band On The Run (Remastered 2010).mp3
+17:Various Artists/70s Rock/13 My Sharona.mp3
+18:Various Artists/70s Rock/04 Go Your Own Way (2004 Remaster).mp3
+19:Various Artists/70s Rock/24 Moonage Daydream (2012 Remaster).mp3
+20:Various Artists/70s Rock/62 Let It Be (Remastered 2009).mp3
+21:Various Artists/70s Rock/47 Anarchy In The UK.mp3
+22:Various Artists/70s Rock/40 Aqualung.mp3
+23:Various Artists/70s Rock/69 Get It On.mp3
+24:Various Artists/70s Rock/41 Look at Yourself (2017 Remastered).mp3
+25:Various Artists/70s Rock/52 Hotel California (2013 Remaster).mp3
+26:Various Artists/70s Rock/21 Victim of Love (2013 Remaster).mp3
+27:Various Artists/70s Rock/17 London Calling.mp3
+28:Various Artists/70s Rock/26 Black Magic Woman - Gypsy Queen.mp3
+29:Various Artists/70s Rock/22 Midnight Rider.mp3
+30:Various Artists/70s Rock/59 Bohemian Rhapsody (2011 Mix).mp3
+31:Various Artists/70s Rock/46 The Joker.mp3
+32:Various Artists/70s Rock/56 Brown Sugar.mp3
+33:Various Artists/70s Rock/66 Riders on the Storm.mp3
+34:Various Artists/70s Rock/03 Whole Lotta Love (2012 Remaster).mp3
+35:Various Artists/70s Rock/20 Stay with Me (2006 Remaster).mp3
+36:Various Artists/70s Rock/60 Dream On.mp3
+37:Various Artists/70s Rock/30 Carry on Wayward Son.mp3
+38:Various Artists/70s Rock/12 Freebird.mp3
+39:Various Artists/70s Rock/28 Just What I Needed.mp3
+40:Various Artists/70s Rock/39 Chicago - We Can Change The World (Remastered).mp3
+41:Various Artists/70s Rock/05 Psycho Killer (2005 Remaster).mp3
+42:Various Artists/70s Rock/06 A Horse with No Name.mp3
+43:Various Artists/70s Rock/08 All Right Now.mp3
+44:Various Artists/70s Rock/01 Bennie And The Jets (Remastered 2014).mp3
+45:Various Artists/70s Rock/34 The Boys Are Back In Town.mp3
+46:Various Artists/70s Rock/42 Imagine (Remastered).mp3
+47:Various Artists/70s Rock/18 Mr. Blue Sky.mp3
+48:Various Artists/70s Rock/19 Heart Of Glass (Remix).mp3
+49:Various Artists/70s Rock/70 Immigrant Song (Remaster).mp3
+50:Various Artists/70s Rock/61 Lookin' Out My Back Door.mp3
+51:Various Artists/70s Rock/11 I'd Love to Change the World (2004 Remaster).mp3
+52:Various Artists/70s Rock/45 Florentine Pogen.mp3
+53:Various Artists/70s Rock/14 My Sweet Lord.mp3
+54:Various Artists/70s Rock/63 Hold the Line.mp3
+55:Various Artists/70s Rock/49 Rich Girl (Remastered).mp3
+56:Various Artists/70s Rock/25 Slow Ride.mp3
+57:Various Artists/70s Rock/23 No More Mr. Nice Guy.mp3
+58:Various Artists/70s Rock/54 Money (2011 Remastered Version).mp3
+59:Various Artists/70s Rock/37 Crucify Your Mind.mp3
+60:Various Artists/70s Rock/55 Won't Get Fooled Again (Original Album Version).mp3
+61:Various Artists/70s Rock/67 Come and Get Your Love (Single Version).mp3
+62:Various Artists/70s Rock/65 Highway to Hell.mp3
+63:Various Artists/70s Rock/64 Touch Too Much.mp3
+64:Various Artists/70s Rock/27 Ooh La La.mp3
+65:Various Artists/70s Rock/31 Maggie May.mp3
+66:Various Artists/70s Rock/02 Highway Star.mp3
+67:Various Artists/70s Rock/35 Because the Night.mp3
+68:Various Artists/70s Rock/43 Rock And Roll All Nite.mp3
+69:Various Artists/70s Rock/10 (Don't Fear) The Reaper (Remastered).mp3
+playlist_end
