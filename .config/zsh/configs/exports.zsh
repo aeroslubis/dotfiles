@@ -21,10 +21,10 @@ fi
 # default appclication
 export EDITOR='vim'
 export PAGER='less'
-export BROWSER='firefox'
+export BROWSER='chromium'
 export FILE='nnn'
 export PLAYER='mpv --no-video'
-export TERMINAL='termite'
+export TERMINAL='kitty'
 # export VISUAL='dvim'
 
 export npm_config_prefix="$HOME/.node_modules"
@@ -36,24 +36,24 @@ export ELINKS_CONFDIR="$XDG_CONFIG_HOME/elinks"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 
 # nnn configs
+export NNN_OPTS="dEoQxeaU"
 export NNN_BMS='d:~/Downloads;'
        NNN_BMS+='s:~/Sandbox;'
        NNN_BMS+='v:~/Videos;'
-       NNN_BMS+='T:~/Downloads/Torrents;'
-       NNN_BMS+='M:~/Music;'
        NNN_BMS+='p:~/Pictures;'
        NNN_BMS+='u:/run/media;'
-       NNN_BMS+='U:/.mtp;'
        NNN_BMS+='r:~/Repository;'
        NNN_BMS+='c:~/.config;'
 export NNN_PLUG='i:imgview;'
        NNN_PLUG+='m:boom;'
        NNN_PLUG+='p:preview-tui;'
+       NNN_PLUG+='e:suedit;'
 export NNN_COPIER="$XDG_CONFIG_HOME/nnn/copier"
 export NNN_COLORS="4231"
-# export NNN_OPENER="xdg-open"
 export NNN_OPENER="$XDG_CONFIG_HOME/nnn/plugins/nuke"
 export NNN_ARCHIVE="\\.(7z|bz2|gz|tar|tgz|zip|rar)$"
+export NNN_ORDER='t:$HOME/Downloads'
+export NNN_TMPFILE="$XDG_CONFIG_HOME/nnn/.lastd"
 
 # fzf
 export FZF_DEFAULT_COMMAND="rg \
