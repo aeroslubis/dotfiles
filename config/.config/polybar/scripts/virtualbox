@@ -1,6 +1,0 @@
-#!/bin/bash
-
-vms=$(vboxmanage list runningvms | wc -l)
-if [ $vms -gt 0 ]; then
-    echo " $vms"
-fi

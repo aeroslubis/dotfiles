@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-echo "$(date '+%a %l:%M %p ')"
-
-case $BLOCK_BUTTON in
-    3) notify-send "📅 Current date:" "$(date '+%d %b %Y ')" ;;
-esac

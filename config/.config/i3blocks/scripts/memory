@@ -1,7 +1,0 @@
-#!/bin/sh
-
-case $BLOCK_BUTTON in
-    3) notify-send "🧠 Memory hogs:" "$(ps axch -o cmd:15,size --sort=-size | head)" ;;
-esac
-
-free --mega -h | awk '/^Mem:/ {print $3 "/" $2}'
