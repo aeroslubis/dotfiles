@@ -65,13 +65,13 @@ set number
 " hi Normal ctermbg=NONE
 
 " Colorscheme
-if executable('tmux') && $TMUX !=# ''
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-endif
-set termguicolors
+" if executable('tmux') && $TMUX !=# ''
+"     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" endif
+" set termguicolors
 set background=dark
-colorscheme afterglow
+colorscheme nord
 
 " Enable statusline
 set laststatus=2

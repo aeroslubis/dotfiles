@@ -19,29 +19,6 @@ if [[ $TERM != "xterm-256color" ]]; then
     TERM="xterm-256color"
 fi
 
-# nnn environment variables
-export NNN_OPTS="dEoQxeaU"
-export NNN_BMS='d:~/Downloads;'
-       NNN_BMS+='s:~/Sandbox;'
-       NNN_BMS+='n:~/netshare;'
-       NNN_BMS+='p:~/Pictures;'
-       NNN_BMS+='u:/run/media;'
-       NNN_BMS+='r:~/Repository;'
-       NNN_BMS+='c:~/.config;'
-export NNN_PLUG='i:imgview;'
-       NNN_PLUG+='m:boom;'
-       NNN_PLUG+='p:preview-tui;'
-       NNN_PLUG+='e:suedit;'
-export NNN_COPIER="$XDG_CONFIG_HOME/nnn/copier"
-export NNN_COLORS="4231"
-export NNN_OPENER="$XDG_CONFIG_HOME/nnn/plugins/nuke"
-export NNN_ARCHIVE="\\.(7z|bz2|gz|tar|tgz|zip|rar)$"
-export NNN_ORDER='t:$HOME/Downloads'
-export NNN_TMPFILE="$XDG_CONFIG_HOME/nnn/.lastd"
-
-# dircolors
-eval $(dircolors --sh "$XDG_CONFIG_HOME/shell/dircolors")
-
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -69,3 +46,26 @@ export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
 export WEECHAT_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/weechat"
 export MBSYNCRC="${XDG_CONFIG_HOME:-$HOME/.config}/mbsync/config"
 #export ELECTRUMDIR="${XDG_DATA_HOME:-$HOME/.local/share}/electrum"
+
+# nnn environment variables
+export NNN_OPTS="dEoQxeaU"
+export NNN_BMS='d:~/Downloads;'
+       NNN_BMS+='s:~/Sandbox;'
+       NNN_BMS+='n:~/netshare;'
+       NNN_BMS+='p:~/Pictures;'
+       NNN_BMS+='u:/run/media;'
+       NNN_BMS+='r:~/Repository;'
+       NNN_BMS+='c:~/.config;'
+export NNN_PLUG='i:imgview;'
+       NNN_PLUG+='m:boom;'
+       NNN_PLUG+='p:preview-tui;'
+       NNN_PLUG+='e:suedit;'
+export NNN_COPIER="$XDG_CONFIG_HOME/nnn/copier"
+export NNN_COLORS="4231"
+export NNN_OPENER="$XDG_CONFIG_HOME/nnn/plugins/nuke"
+export NNN_ARCHIVE="\\.(7z|bz2|gz|tar|tgz|zip|rar)$"
+export NNN_ORDER='t:$HOME/Downloads'
+export NNN_TMPFILE="$XDG_CONFIG_HOME/nnn/.lastd"
+
+# dircolors
+eval $(dircolors --sh "$XDG_CONFIG_HOME/shell/dircolors")

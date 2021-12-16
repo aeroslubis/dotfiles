@@ -8,7 +8,7 @@
 ! Import Colour from ~/.xrdb
 ! ------------------------------------------------------------------------------
 ! #include ".xrdb/colors/onedark"
-#include ".xrdb/fonts/iosevka"
+#include ".xrdb/fonts/jetbrains"
 ! special
 *.foreground:   #c5c8c6
 *.background:   #1d1f21
@@ -79,7 +79,7 @@ URxvt*cursorBlink:              true
 ! Xft Font Configuration
 ! ------------------------------------------------------------------------------
 Xft.autohint:                   0
-Xft.dpi:                        96
+Xft.dpi:                        118
 Xft.lcdfilter:                  lcddefault
 Xft.hintstyle:                  hintslight
 Xft.hinting:                    true

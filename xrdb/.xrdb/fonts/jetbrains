@@ -1,0 +1,7 @@
+! fonts
+URxvt*font:         xft:JetBrains Mono:size=11, xft:FontAwesome:size=11
+URxvt*boldFont:     xft:JetBrains Mono:bold:size=11, xft:FontAwesome:size=11
+URxvt*italicFont:   xft:JetBrains Mono:italic:size=11, xft:FontAwesome:size=11
+
+st.font:            JetBrains Mono:size=11:antialias=true:autohint=true;
+rofi.font:          JetBrains Mono 15

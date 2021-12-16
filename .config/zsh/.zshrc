@@ -1,7 +1,6 @@
 foreach piece (
     prompt.zsh
     load.zsh
-    exports.zsh
     settings.zsh
     functions.zsh
     aliases.zsh
