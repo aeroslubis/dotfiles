@@ -1,0 +1,12 @@
+#!/bin/bash
+# Script to manimpulate screen brightness
+
+send_notification() {
+    level=$(xbacklight -get | cut -d'.' -f1)
+    dunstify --timeout 1000 --hints int:value:$level Brightness
+}
+
+case "$1" in
+    u*) xbacklight -inc 5; send_notification ;;
+    d*) xbacklight -dec 5; send_notification;;
+esac
