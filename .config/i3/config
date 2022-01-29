@@ -17,53 +17,15 @@ font pango:monospace 10
 floating_modifier $mod
 
 # #---------------------Run programs on startup----------------------# #
-# Lauch window manager compositor
-# exec --no-startup-id compton
-
-# Start screen locker
-# exec --no-startup-id light-locker
-
 # auto lock computer if no activity detecter after 10 minutes
 # exec --no-startup-id xautolock -time 10 -corners -000 -locker "$locker -l dim"
 
-# Open terminal with tmux attach
-# exec --no-startup-id $terminal -c tmux new-session -d -n 'main' -s 'work'
-
-# Start polkit authentication agent
-# exec --no-startup-id lxpolkit
-
-# Start mpd daemon
-# exec --no-startup-id mpd $HOME/.config/mpd/mpd.conf
-
-# Set desktop wallpaper
-# exec --no-startup-id feh --bg-fill $HOME/.wallpaper.jpg
-
-# Synaptic Touchpad configurations
-# Enable tapping
-# exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 311 1
-# exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
-# Disable while typing
-# exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 321 1
-# exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Disable While Typing Enabled" 1
-# Disable horizontal scroll
-# exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" 334 0
-# exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Horizontal Scroll Enabled" 0
-
 # #--------------------------Basic Bindings---------------------------# #
-# Open a terminal
-bindsym $mod+Shift+Return exec --no-startup-id $terminal
-
-# Floating terminal
-bindsym $mod+Return exec --no-startup-id $scripts/ddspawn terminal
-
 # Switch between recent workspace
 bindsym $mod+Tab workspace back_and_forth
 
 # kill focused window
 bindsym $mod+Shift+q kill
-
-# start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run -width 40
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+s move scratchpad
@@ -158,6 +120,14 @@ bindsym $mod+Shift+7 move container to workspace 7; workspace 7
 bindsym $mod+Shift+8 move container to workspace 8; workspace 8
 
 # #---------------------------Custom Bindings---------------------------# #
+# Open a terminal
+bindsym $mod+Shift+Return exec --no-startup-id $terminal $scripts/tmux
+
+# Floating terminal
+bindsym $mod+Return exec --no-startup-id $scripts/ddspawn terminal
+
+# start rofi (a program launcher)
+bindsym $mod+d exec --no-startup-id rofi -show run -width 40
 
 # Taking a screenshoot
 bindsym $mod+Print exec --no-startup-id $scripts/scrot_notify
@@ -184,8 +154,8 @@ bindsym $mod+v    exec --no-startup-id $scripts/bottomleft
 bindsym $mod+b    exec --no-startup-id $scripts/bottomright
 
 # Brightness controls
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessUp exec --no-startup-id $scripts/backlight up
+bindsym XF86MonBrightnessDown exec --no-startup-id $scripts/backlight down
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id $scripts/pulseaudio up
@@ -200,49 +170,19 @@ bindsym XF86AudioPrev exec mpc prev
 # Launch browser
 bindsym XF86HomePage exec --no-startup-id $BROWSER
 
-# Set colors value
-set $darkblack     #1d1f21
-set $black         #969896
-set $darkred       #cc6666
-set $red           #cc6666
-set $darkgreen     #b5bd68
-set $green         #b5bd68
-set $darkyellow    #f0c674
-set $yellow        #f0c674
-set $darkblue      #81a2be
-set $blue          #81a2be
-set $darkmagenta   #b294bb
-set $magenta       #b294bb
-set $darkcyan      #8abeb7
-set $cyan          #8abeb7
-set $darkwhite     #c5c8c6
-set $white         #ffffff
-set $transparent   #00000000
-
 # Statusline
 bar {
-    font pango:monospace 8
-        colors {
-            background         $darkblack
-            statusline         $darkwhite
-            separator          $cyan
-            focused_workspace  $blue        $darkblue   $darkblack
-            active_workspace   $blue        $blue       $darkwhite
-            inactive_workspace $darkblack   $darkblack  $white
-            urgent_workspace   $darkblack   $darkblack  $white
-        }
-    status_command /usr/bin/bumblebee-status \
-        -m traffic disk sensors2 memory nic time \
-        -p memory.format="{used}" \
-           sensors2.chip="acpitz-acpi-0" \
-           time.format="%a %l:%M %p" \
-           traffic.showname=false \
-           traffic.exclude="lo,docker,vboxnet,veth,tun,utun,br-,wg,ppp,ztn,ztr" \
-           nic.states="^down" nic.format="{ssid}" \
-           nic.exclude="lo,docker,vboxnet,veth,tun,br-,wwp" \
-           disk.path="/home" disk.system="IEC" disk.format="{left}" \
-           interval=5 \
-        -t solarized
+    font pango:monospace 10
+    status_command /usr/bin/i3status-rs
+    colors {
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
+    }
     position top
     mode dock
     modifier None
@@ -286,7 +226,8 @@ for_window [class="libreoffice*"] move workspace 5
 for_window [class="Inkscape"] move workspace 5
 
 # Virtualbox; workspace 6
-assign [instance="VirtualBox Manager"] 6
+assign [instance="VirtualBox Machine"] 6
+for_window [instance="VirtualBox Manager"] floating enable
 assign [instance="VirtualBox Machine"] 6
 
 # General dropdown window traits. The order can matter.
@@ -311,5 +252,9 @@ for_window [class="Gucharmap"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Connman-gtk"] floating enable
+for_window [window_role="pop-up"] floating enable
+
+# Nodejs applications
+for_window [window_role="browser-window"] move workspace 3
 
 # vim:filetype=i3
